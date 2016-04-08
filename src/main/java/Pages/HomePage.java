@@ -8,6 +8,8 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.Set;
+
 import static org.testng.Assert.assertTrue;
 
 public class HomePage extends Settings {
@@ -15,7 +17,7 @@ public class HomePage extends Settings {
     public static void services_link_present() {
         WebElement services_link = null;
         try {
-            close_subscription_popup.click();
+
             services_link = getDriver().findElement(By.xpath(Variables.SERVICES_LINK.toString()));
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -82,10 +84,15 @@ public class HomePage extends Settings {
 
     public static void get_coockie() {
         boolean subscription_added = false;
-        Cookie subscription;
+        Set<Cookie> all_cookie;
+        Settings.waitInSeconds(10);
+        close_subscription_popup.click();
+        driver.navigate().refresh();
+        Settings.waitInSeconds(2);
         try {
-            subscription = driver.manage().getCookieNamed("subscribePopUP");
-            if (subscription.getValue() == String.valueOf(1)) subscription_added = true;
+            all_cookie=driver.manage().getCookies();
+            all_cookie.toArray();
+            if (all_cookie.contains("subscribePopUP=1")) subscription_added = true;
         }
         catch (NullPointerException e)
         {

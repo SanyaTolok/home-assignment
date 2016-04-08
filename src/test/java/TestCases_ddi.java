@@ -1,9 +1,10 @@
+import MainSettings.Settings;
 import Pages.Blog;
 import Pages.Contact_US;
 import Pages.HomePage;
 import org.testng.annotations.Test;
 
-public class TestCases_ddi
+public class TestCases_ddi extends Settings
 {
     @Test(priority = 0)
     public void test_blog_article()

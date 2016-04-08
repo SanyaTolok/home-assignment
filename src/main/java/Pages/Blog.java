@@ -8,7 +8,7 @@ public class Blog extends Settings {
     private static Button blog_link= new Button(By.xpath(Variables.BLOG_LINK.toString()));
     public static Blog test_share()
     {
-       blog_link.click();
+       Settings.waitInSeconds(50);
         return new Blog();
     }
 }

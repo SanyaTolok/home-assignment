@@ -22,7 +22,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        Assert.assertTrue(services_link == null, "Test case is FAILED - Services LINK is ABSENT!!!");
+        Assert.assertTrue(services_link != null, "Test case is FAILED - Services LINK is ABSENT!!!");
 
     }
 
@@ -33,7 +33,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(technology_link == null, "Test case is FAILED - TECHNOLOGY LINK is ABSENT!!!");
+        assertTrue(technology_link != null, "Test case is FAILED - TECHNOLOGY LINK is ABSENT!!!");
 
     }
 
@@ -44,7 +44,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(blog_link == null, "Test case is FAILED - BLOG LINK is ABSENT!!!");
+        assertTrue(blog_link != null, "Test case is FAILED - BLOG LINK is ABSENT!!!");
 
     }
 
@@ -55,7 +55,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(company_link == null, "Test case is FAILED - CCOMPANY LINK is ABSENT!!!");
+        assertTrue(company_link != null, "Test case is FAILED - CCOMPANY LINK is ABSENT!!!");
 
     }
 
@@ -66,7 +66,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(contuct_us_link == null, "Test case is FAILED - CONTACT US LINK is ABSENT!!!");
+        assertTrue(contuct_us_link != null, "Test case is FAILED - CONTACT US LINK is ABSENT!!!");
 
     }
 
@@ -78,7 +78,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(portfolio_link == null, "Test case is FAILED -PORTFOLIO LINK is ABSENT!!!");
+        assertTrue(portfolio_link != null, "Test case is FAILED -PORTFOLIO LINK is ABSENT!!!");
 
     }
 

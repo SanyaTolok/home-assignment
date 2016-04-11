@@ -1,6 +1,7 @@
 package Pages;
 
 import Elements.Button;
+import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.By;
@@ -14,6 +15,13 @@ import static org.testng.Assert.assertTrue;
 
 public class HomePage extends Settings {
     private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
+    private static Button start_project=new Button((By.xpath(Variables.START_PROJECT.toString())));
+    private static Button close=new Button(By.xpath(Variables.START_PROJECT_CLOSE.toString()));
+    private static Button send=new Button(By.xpath(Variables.START_PROJECT_SEND_BUTTON.toString()));
+    private static TextField name=new TextField(By.xpath(Variables.START_PROJECT_NAME.toString()));
+    private static TextField email=new TextField(By.xpath(Variables.START_PROJECT_EMAIL.toString()));
+    private static TextField phone=new TextField(By.xpath(Variables.START_PROJECT_PHONE.toString()));
+    private static TextField message=new TextField(By.xpath(Variables.START_PROJECT_MESSAGE.toString()));
     public static void services_link_present() {
         WebElement services_link = null;
         try {
@@ -99,6 +107,16 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         Assert.assertTrue(subscription_added == false, "Test case is FAILED -subscription not added");
+    }
+    public static HomePage send_request()
+    {
+        start_project.click();
+        name.enterText("DDI DEV TEST START PROJECT");
+        email.enterText("ddi-dev@test.com");
+        phone.enterText("17183559302");
+        message.enterText("short test message");
+        send.click();
+        return new HomePage();
     }
 }
 

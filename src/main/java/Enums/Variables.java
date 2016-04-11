@@ -10,6 +10,13 @@ public enum Variables
     BLOG_LINK(".//*[@id='nav']/ul/li[5]/a"),
     CONTACTS_LINK(".//a[text()='Contacts']"),
     START_PROJECT(".//*[@id='main']/section/span/span/div/div/a"),
+    //Start project form1
+    START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
+    START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),
+    START_PROJECT_PHONE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[4]/input"),
+    START_PROJECT_MESSAGE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[5]/textarea"),
+    START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[6]/input"),
+    START_PROJECT_CLOSE(".//*[@id='requestFormModal']/div/div/div[1]/button"),
     //Contact Us Now form
     NAME_INPUT(".//*[@id='contact-form']/div/input[1]"),
     EMAIL_INPUT(".//*[@id='contact-form']/div/input[2]"),
@@ -24,10 +31,7 @@ public enum Variables
     SHARE_LINKED_IN("html/body/div[6]/div[1]/ul/li[3]"),
     SHARE_GOOGLE("html/body/div[6]/div[1]/ul/li[4]"),
     SHARE_EMAIL("html/body/div[6]/div[1]/ul/li[5]"),
-    CANCEL_FACEBOOK(".//*[@id='u_0_3']"),
-    TWEET_LOGIN("//*[conteins(@name='session[username_or_email]')]"),
-    TWEET_PASS("//*[conteins(@name='session[password]')]"),
-    TWEET_TWEET("//*[conteins(@class='submit btn primary-btn')]");
+    CANCEL_FACEBOOK(".//*[@id='u_0_3']");
     private String text;
     private Variables(String text)
     {

@@ -12,9 +12,14 @@ public class TestCases_ddi extends Settings
         Blog.all_tabs_exsist();
     }
     @Test(priority = 0)
-    public void share_blog_article()
+    public void share_blog_facebook()
     {
-        Blog.share_article();
+        Blog.share_facebook();
+    }
+    @Test(priority = 0)
+    public void share_blog_tweet()
+    {
+        Blog.share_tweet();
     }
     @Test(priority = 0)
     public void send_request_contact_us()

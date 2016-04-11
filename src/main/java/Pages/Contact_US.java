@@ -18,12 +18,12 @@ public class Contact_US extends Settings
     public static Contact_US send_request()
     {
         contact_us.click();
+        Settings.waitInSeconds(12);
+        close_subscription_popup.click();
         name.enterText("DDI TEST NAME");
         phone.enterText("17183559302");
         email.enterText("test@ddi-dev.com");
         message.enterText("Automation test of contact us form");
-        Settings.waitInSeconds(8);
-        close_subscription_popup.click();
         sent.click();
         return new Contact_US();
     }

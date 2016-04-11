@@ -24,7 +24,10 @@ public enum Variables
     SHARE_LINKED_IN("html/body/div[6]/div[1]/ul/li[3]"),
     SHARE_GOOGLE("html/body/div[6]/div[1]/ul/li[4]"),
     SHARE_EMAIL("html/body/div[6]/div[1]/ul/li[5]"),
-    CANCEL_FACEBOOK(".//*[@id='u_0_3']");
+    CANCEL_FACEBOOK(".//*[@id='u_0_3']"),
+    TWEET_LOGIN("//*[conteins(@name='session[username_or_email]')]"),
+    TWEET_PASS("//*[conteins(@name='session[password]')]"),
+    TWEET_TWEET("//*[conteins(@class='submit btn primary-btn')]");
     private String text;
     private Variables(String text)
     {

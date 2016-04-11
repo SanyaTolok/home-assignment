@@ -1,5 +1,6 @@
 package TrackReporting;
 import org.testng.Reporter;
+
 public class Logger {
 
     public static void log(String message) {

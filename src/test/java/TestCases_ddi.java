@@ -7,9 +7,14 @@ import org.testng.annotations.Test;
 public class TestCases_ddi extends Settings
 {
     @Test(priority = 0)
-    public void test_blog_article()
+    public void test_blog_tabs()
     {
-        Blog.test_share();
+        Blog.all_tabs_exsist();
+    }
+    @Test(priority = 0)
+    public void share_blog_article()
+    {
+        Blog.share_article();
     }
     @Test(priority = 0)
     public void send_request_contact_us()

@@ -5,6 +5,11 @@ import org.testng.annotations.Test;
 public class TestCases_ddi extends Settings
 {
     @Test(priority = 0)
+    public void portfolio_tabs_exsist_and_works()
+    {
+        Portfolio.tabs_exsist_and_works();
+    }
+    @Test(priority = 0)
     public void company_links_verify_present()
     {
         Company.company_links_present();

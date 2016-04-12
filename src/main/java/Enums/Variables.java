@@ -28,6 +28,11 @@ public enum Variables
     PORTFOLIO_NAME(".//*[@id='mob-body']/div/input[1]"),
     PORFOLIO_EMAIL(".//*[@id='mob-body']/div/input[2]"),
     SEND(".//*[@id='mob-body']/div/div[2]/button"),
+    WEB_DEVELOPMENT_TAB(".//*[@id='portfolio']/ul[1]/li[2]/a"),
+    MOBILE_DEVELOPMENT_TAB(".//*[@id='portfolio']/ul[1]/li[3]/a"),
+    CLOUD_SOLUTION_TAB(".//*[@id='portfolio']/ul[1]/li[4]/a"),
+    ENTERPRICE_SOFTWARE_TAB(".//*[@id='portfolio']/ul[1]/li[5]/a"),
+    TAB_ALL(".//*[@id='portfolio']/ul[1]/li[1]/a"),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

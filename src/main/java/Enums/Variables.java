@@ -10,6 +10,9 @@ public enum Variables
     BLOG_LINK(".//*[@id='nav']/ul/li[5]/a"),
     CONTACTS_LINK(".//a[text()='Contacts']"),
     START_PROJECT(".//*[@id='main']/section/span/span/div/div/a"),
+    SUBSCRIBE(".//*[@id='email-subscribe']"),
+    SIGN_UP(".//*[@id='footer']/div[1]/div/form/fieldset/div[2]/input[2]"),
+    CONGRATS("html/body/div[2]/div/div/div/p"),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

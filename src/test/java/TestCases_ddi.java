@@ -12,6 +12,9 @@ public class TestCases_ddi extends Settings
         HomePage.send_request();
     }
     @Test(priority = 0)
+    public void verify_subscription()
+    {HomePage.subscribe_email();}
+    @Test(priority = 0)
     public void test_blog_tabs()
     {
         Blog.all_tabs_exsist();

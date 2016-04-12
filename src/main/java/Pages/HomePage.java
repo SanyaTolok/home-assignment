@@ -1,6 +1,7 @@
 package Pages;
 
 import Elements.Button;
+import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
@@ -22,6 +23,9 @@ public class HomePage extends Settings {
     private static TextField email=new TextField(By.xpath(Variables.START_PROJECT_EMAIL.toString()));
     private static TextField phone=new TextField(By.xpath(Variables.START_PROJECT_PHONE.toString()));
     private static TextField message=new TextField(By.xpath(Variables.START_PROJECT_MESSAGE.toString()));
+    private static TextField subscribe=new TextField(By.xpath(Variables.SUBSCRIBE.toString()));
+    private static Button sign_in=new Button(By.xpath(Variables.SIGN_UP.toString()));
+    private static Element congrats=new Element(By.xpath(Variables.CONGRATS.toString()));
     public static void services_link_present() {
         WebElement services_link = null;
         try {
@@ -116,6 +120,13 @@ public class HomePage extends Settings {
         phone.enterText("17183559302");
         message.enterText("short test message");
         send.click();
+        return new HomePage();
+    }
+    public static HomePage subscribe_email()
+    {
+        subscribe.enterText("ddi-dev@test.com");
+        sign_in.click();
+        congrats.isPresent();
         return new HomePage();
     }
 }

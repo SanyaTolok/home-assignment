@@ -1,12 +1,14 @@
 import MainSettings.Settings;
-import Pages.Blog;
-import Pages.Contact_US;
-import Pages.HomePage;
-import Pages.Portfolio;
+import Pages.*;
 import org.testng.annotations.Test;
 
 public class TestCases_ddi extends Settings
 {
+    @Test(priority = 0)
+    public void company_links_verify_present()
+    {
+        Company.company_links_present();
+    }
     @Test(priority = 0)
     public void get_more_info_portfolio()
     {

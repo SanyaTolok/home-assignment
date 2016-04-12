@@ -16,6 +16,10 @@ public enum Variables
     SUBSCRIBE(".//*[@id='email-subscribe']"),
     SIGN_UP(".//*[@id='footer']/div[1]/div/form/fieldset/div[2]/input[2]"),
     CONGRATS("html/body/div[2]/div/div/div/p"),
+    //Company
+    OPEN_MENU(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/i[1]"),
+    MANAGMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[1]/a"),
+    SOFTWARE_DEVELOPMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[2]/a"),
     //Portfolio
     GET_MORE_BUTTON("html/body/div[3]/div/div[1]/div[2]/div[2]/button"),
     MOBILE(".//*[@id='request-form']/div/div/div[1]/div/div[1]/label/span"),

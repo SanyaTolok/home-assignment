@@ -36,26 +36,6 @@
             <version>2.0.7</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.logging.log4j.adapters</groupId>
-            <artifactId>log4j-1.2-api</artifactId>
-            <version>2.0-beta4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j.osgi</groupId>
-            <artifactId>log4j-1.2-osgi-api</artifactId>
-            <version>2.0-rc1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j.samples</groupId>
-            <artifactId>flume-common</artifactId>
-            <version>2.0-beta5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j.adapters</groupId>
-            <artifactId>log4j-flume-ng</artifactId>
-            <version>2.0-beta4</version>
-        </dependency>
-        <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.16</version>
@@ -69,16 +49,6 @@
             <groupId>com.github.detro</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>1.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.5</version>
         </dependency>
     </dependencies>
 

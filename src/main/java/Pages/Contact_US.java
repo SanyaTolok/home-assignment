@@ -15,6 +15,7 @@ public class Contact_US extends Settings
     private static TextField name=new TextField(By.xpath(Variables.NAME_INPUT.toString()));
     private static TextField message=new TextField(By.xpath(Variables.MESSAGE_TEXTFIELD.toString()));
     private static Button sent= new Button(By.xpath(Variables.SENT_BUTTON.toString()));
+    //private static TextField add_file= new TextField(By.xpath(Variables.ADD_FILE.toString()));
     public static Contact_US send_request()
     {
         contact_us.click();
@@ -24,6 +25,8 @@ public class Contact_US extends Settings
         phone.enterText("17183559302");
         email.enterText("test@ddi-dev.com");
         message.enterText("Automation test of contact us form");
+        //add_file.enterText("home\\ddidev\\Downloads\\Kak_testiruyut_v_Google.pdf");
+        Settings.waitInSeconds(5);
         sent.click();
         return new Contact_US();
     }

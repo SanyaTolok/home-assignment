@@ -37,6 +37,7 @@ public enum Variables
     PHONE_INPUT(".//*[@id='contact-form']/div/input[3]"),
     MESSAGE_TEXTFIELD(".//*[@id='contact-form']/div/textarea"),
     SENT_BUTTON(".//*[@id='contact-form']/div/div[2]/button"),
+    ADD_FILE(".//*[@id='contact-form']/div/div[2]/div[1]/input"),
     //Blog
     //ALL_TAB("html/body/div[2]/div/div/ul/li[6]/a"),
     ARTICLE_LINK("html/body/div[3]/div[1]/div[2]/div[5]/div[3]/a[2]"),

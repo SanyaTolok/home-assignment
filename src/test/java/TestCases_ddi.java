@@ -2,10 +2,15 @@ import MainSettings.Settings;
 import Pages.Blog;
 import Pages.Contact_US;
 import Pages.HomePage;
+import Pages.Portfolio;
 import org.testng.annotations.Test;
 
 public class TestCases_ddi extends Settings
 {
+    @Test(priority = 0)
+    public void get_more_info_portfolio()
+    {
+        Portfolio.get_more_info();}
     @Test(priority = 0)
     public void send_request()
     {

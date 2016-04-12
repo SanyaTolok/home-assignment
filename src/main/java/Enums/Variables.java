@@ -1,4 +1,7 @@
 package Enums;
+
+import javax.xml.ws.wsaddressing.W3CEndpointReferenceBuilder;
+
 public enum Variables
 {
     //HomePage
@@ -13,6 +16,14 @@ public enum Variables
     SUBSCRIBE(".//*[@id='email-subscribe']"),
     SIGN_UP(".//*[@id='footer']/div[1]/div/form/fieldset/div[2]/input[2]"),
     CONGRATS("html/body/div[2]/div/div/div/p"),
+    //Portfolio
+    GET_MORE_BUTTON("html/body/div[3]/div/div[1]/div[2]/div[2]/button"),
+    MOBILE(".//*[@id='request-form']/div/div/div[1]/div/div[1]/label/span"),
+    WEB(".//*[@id='request-form']/div/div/div[1]/div/div[2]/label/span"),
+    CLOUD(".//*[@id='request-form']/div/div/div[1]/div/div[3]/label/span"),
+    PORTFOLIO_NAME(".//*[@id='mob-body']/div/input[1]"),
+    PORFOLIO_EMAIL(".//*[@id='mob-body']/div/input[2]"),
+    SEND(".//*[@id='mob-body']/div/div[2]/button"),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

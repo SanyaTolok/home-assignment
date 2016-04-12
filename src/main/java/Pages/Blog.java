@@ -20,6 +20,9 @@ public class Blog extends Settings {
     private static Button share_google= new Button(By.xpath(Variables.SHARE_GOOGLE.toString()));
     private static Button share_email= new Button(By.xpath(Variables.SHARE_EMAIL.toString()));
     private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
+    private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));
+    private static Button next_page=new Button(By.xpath(Variables.NEXT_PAGE.toString()));
+
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -90,6 +93,11 @@ public class Blog extends Settings {
             Assert.assertTrue(share_tweet!=true,"Test failed");
         }
         driver.switchTo().window(parentWindowHandler);
+        return new Blog();
+    }
+    public static Blog test_paging()
+    {
+
         return new Blog();
     }
 }

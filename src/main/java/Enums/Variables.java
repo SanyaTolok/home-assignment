@@ -33,6 +33,10 @@ public enum Variables
     CLOUD_SOLUTION_TAB(".//*[@id='portfolio']/ul[1]/li[4]/a"),
     ENTERPRICE_SOFTWARE_TAB(".//*[@id='portfolio']/ul[1]/li[5]/a"),
     TAB_ALL(".//*[@id='portfolio']/ul[1]/li[1]/a"),
+    PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/span"),
+    NEXT_PAGE(".//*[@id='paginator']/ul/li[7]/a"),
+    SECOND_PAGE(".//*[@id='paginator']/ul/li[3]/a"),
+    THIRD_PAGE(""),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

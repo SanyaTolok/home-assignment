@@ -61,6 +61,11 @@ public enum Variables
     SHARE_EMAIL("html/body/div[6]/div[1]/ul/li[5]"),
     CANCEL_FACEBOOK(".//*[@id='u_0_3']"),
     START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/div[1]"),
+    DISQUS_LOGIN(".//*[@id='form']/form/div/div[4]/div/section/div[1]/ul/li[1]/button"),
+    DISQUS_EMAIL(".//*[@id='auth-form']/div[2]/input"),
+    DISQUS_PASS(".//*[@id='auth-form']/div[3]/input"),
+    LOGIN_DISQUS(".//*[@id='auth-form-button']"),
+    POST_COMMENT_BUTTON(".//*[@id='form']/form/div/div[3]/div[5]/div/section/div/button"),
     ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span");
     private String text;
     private Variables(String text)

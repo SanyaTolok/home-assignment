@@ -23,6 +23,11 @@ public class Blog extends Settings {
     private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));
     private static TextField start_discuss=new TextField(By.xpath(Variables.START_DISCUSS.toString()));
     private static Button activate=new Button(By.xpath(Variables.ACTIVATE_START_DISCUSS.toString()));
+    private static Button disqus_login=new Button(By.xpath(Variables.DISQUS_LOGIN.toString()));
+    private static TextField email=new TextField(By.xpath(Variables.DISQUS_EMAIL.toString()));
+    private static TextField pass=new TextField(By.xpath(Variables.DISQUS_PASS.toString()));
+    private static Button login_button=new Button(By.xpath(Variables.LOGIN_DISQUS.toString()));
+    private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -127,11 +132,30 @@ public class Blog extends Settings {
         blog_link.click();
         article.waitForElementIsPresent();
         article.click();
-        Settings.waitInSeconds(10);
+        Settings.waitInSeconds(14);
         close_subscription_popup.click();
+        driver.switchTo().frame("dsq-app2");
         activate.click();
         start_discuss.waitForElementIsPresent();
         start_discuss.enterText("simple comment ddi-dev.test");
+        disqus_login.click();
+        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+        String subWindowHandler = null;
+        Set<String> handles = driver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while(iterator.hasNext())
+        {
+            subWindowHandler = iterator.next();
+        }
+        driver.switchTo().window(subWindowHandler); // switch to popup window
+        email.enterText("jasonbrienflocktoo@gmail.com");
+        pass.enterText("ddi-dev.tests");
+        login_button.click();
+        driver.switchTo().window(parentWindowHandler);
+        driver.switchTo().frame("dsq-app2");
+        start_discuss.waitForElementIsPresent();
+        start_discuss.enterText("simple comment ddi-dev.test");
+        post.click();
         return new Blog();
     }
 }

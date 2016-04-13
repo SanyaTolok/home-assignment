@@ -59,7 +59,9 @@ public enum Variables
     SHARE_LINKED_IN("html/body/div[6]/div[1]/ul/li[3]"),
     SHARE_GOOGLE("html/body/div[6]/div[1]/ul/li[4]"),
     SHARE_EMAIL("html/body/div[6]/div[1]/ul/li[5]"),
-    CANCEL_FACEBOOK(".//*[@id='u_0_3']");
+    CANCEL_FACEBOOK(".//*[@id='u_0_3']"),
+    START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/div[1]"),
+    ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span");
     private String text;
     private Variables(String text)
     {

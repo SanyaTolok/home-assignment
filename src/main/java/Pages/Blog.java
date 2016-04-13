@@ -1,5 +1,6 @@
 package Pages;
 import Elements.Button;
+import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.By;
@@ -20,6 +21,8 @@ public class Blog extends Settings {
     private static Button next_page=new Button(By.xpath(Variables.NEXT_PAGE.toString()));
     private static Button second_page=new Button(By.xpath(Variables.SECOND_PAGE.toString()));
     private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));
+    private static TextField start_discuss=new TextField(By.xpath(Variables.START_DISCUSS.toString()));
+    private static Button activate=new Button(By.xpath(Variables.ACTIVATE_START_DISCUSS.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -58,7 +61,7 @@ public class Blog extends Settings {
     }
     public static Blog share_tweet()
     {
-        close_subscription_popup.click();
+        blog_link.click();
         article.waitForElementIsPresent();
         article.click();
         share_tweet.waitForElementIsPresent();
@@ -105,7 +108,7 @@ public class Blog extends Settings {
         }
         else
         {
-            Assert.fail("Test failed");
+            Assert.fail("Test failed");//show error message if link is incorrect
 
         }
         driver.switchTo().window(parentWindowHandler);
@@ -117,6 +120,18 @@ public class Blog extends Settings {
         second_page.click();
         next_page.click();
         previous.click();
+        return new Blog();
+    }
+    public static Blog discuss_add_comment()
+    {
+        blog_link.click();
+        article.waitForElementIsPresent();
+        article.click();
+        Settings.waitInSeconds(10);
+        close_subscription_popup.click();
+        activate.click();
+        start_discuss.waitForElementIsPresent();
+        start_discuss.enterText("simple comment ddi-dev.test");
         return new Blog();
     }
 }

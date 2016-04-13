@@ -1,12 +1,9 @@
 package Pages;
 import Elements.Button;
-import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import bsh.Console;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
 import java.util.Iterator;
 import java.util.Set;
 
@@ -20,9 +17,9 @@ public class Blog extends Settings {
     private static Button share_google= new Button(By.xpath(Variables.SHARE_GOOGLE.toString()));
     private static Button share_email= new Button(By.xpath(Variables.SHARE_EMAIL.toString()));
     private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
-    private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));
     private static Button next_page=new Button(By.xpath(Variables.NEXT_PAGE.toString()));
-
+    private static Button second_page=new Button(By.xpath(Variables.SECOND_PAGE.toString()));
+    private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -33,8 +30,6 @@ public class Blog extends Settings {
     public static Blog share_facebook()
     {
         blog_link.click();
-        Settings.waitInSeconds(15);
-        close_subscription_popup.click();
         article.waitForElementIsPresent();
         article.click();
         share_facebook.waitForElementIsPresent();
@@ -49,15 +44,13 @@ public class Blog extends Settings {
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
         String url = driver.getCurrentUrl();// get popup url
-        boolean share_facebook=false;
-        if(url.contains("https://www.facebook.com/login.php")) {
-            share_facebook = true;
-            Assert.assertTrue(share_facebook, "Test passed");
-            cancel_facebook.click();
-                    }
+              if(url.contains("https://www.facebook.com/login.php"))
+              {
+                              cancel_facebook.click();
+              }
         else
         {
-            Assert.assertTrue(share_facebook!=true,"Test failed");
+            Assert.fail("Test failed");
         }
 
         driver.switchTo().window(parentWindowHandler);  // switch back to parent window
@@ -65,8 +58,6 @@ public class Blog extends Settings {
     }
     public static Blog share_tweet()
     {
-        blog_link.click();
-        Settings.waitInSeconds(15);
         close_subscription_popup.click();
         article.waitForElementIsPresent();
         article.click();
@@ -82,22 +73,50 @@ public class Blog extends Settings {
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
         String url_tweet = driver.getCurrentUrl();
-        boolean share_tweet=false;
-        if(url_tweet.contains("https://twitter.com")) {
-            share_tweet = true;
-            Assert.assertTrue(share_tweet, "Test passed");
+               if(url_tweet.contains("https://twitter.com")) {
+                        driver.close();
+        }
+        else
+        {
+            Assert.fail("Test failed");
+        }
+        driver.switchTo().window(parentWindowHandler);
+        return new Blog();
+    }
+    public static Blog share_linked_in()
+    {
+        blog_link.click();
+        article.waitForElementIsPresent();
+        article.click();
+        share_linkedin.waitForElementIsPresent();
+        share_linkedin.click();
+        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+        String subWindowHandler = null;
+        Set<String> handles = driver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while(iterator.hasNext())
+        {
+            subWindowHandler = iterator.next();
+        }
+        driver.switchTo().window(subWindowHandler); // switch to popup window
+        String url_linkedin = driver.getCurrentUrl();
+        if(url_linkedin.contains("https://www.linkedin.com/uas/login")) {
             driver.close();
         }
         else
         {
-            Assert.assertTrue(share_tweet!=true,"Test failed");
+            Assert.fail("Test failed");
+
         }
         driver.switchTo().window(parentWindowHandler);
         return new Blog();
     }
     public static Blog test_paging()
     {
-
+        blog_link.click();
+        second_page.click();
+        next_page.click();
+        previous.click();
         return new Blog();
     }
 }

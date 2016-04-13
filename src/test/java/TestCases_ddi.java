@@ -5,6 +5,11 @@ import org.testng.annotations.Test;
 public class TestCases_ddi extends Settings
 {
     @Test(priority = 0)
+    public void test_paging_blog()
+    {
+        Blog.test_paging();
+    }
+    @Test(priority = 0)
     public void portfolio_tabs_exsist_and_works()
     {
         Portfolio.tabs_exsist_and_works();
@@ -42,6 +47,8 @@ public class TestCases_ddi extends Settings
         Blog.share_tweet();
     }
     @Test(priority = 0)
+    public void share_blog_linked_in()
+    {Blog.share_linked_in();}
     public void send_request_contact_us()
     {Contact_US.send_request();}
     @Test(priority = 1)

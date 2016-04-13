@@ -33,7 +33,7 @@ public enum Variables
     CLOUD_SOLUTION_TAB(".//*[@id='portfolio']/ul[1]/li[4]/a"),
     ENTERPRICE_SOFTWARE_TAB(".//*[@id='portfolio']/ul[1]/li[5]/a"),
     TAB_ALL(".//*[@id='portfolio']/ul[1]/li[1]/a"),
-    PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/span"),
+    PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/a"),
     NEXT_PAGE(".//*[@id='paginator']/ul/li[7]/a"),
     SECOND_PAGE(".//*[@id='paginator']/ul/li[3]/a"),
     THIRD_PAGE(""),

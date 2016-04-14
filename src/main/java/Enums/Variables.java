@@ -53,6 +53,9 @@ public enum Variables
     ADD_FILE(".//*[@id='contact-form']/div/div[2]/div[1]/input"),
     //Blog
     //ALL_TAB("html/body/div[2]/div/div/ul/li[6]/a"),
+    DROPDOWN("//ul[@class='post-menu dropdown']"),
+    DELETE("//li[@data-action='delete']"),
+    LIST_OF_POSTS(".//*[@id='posts']"),
     ARTICLE_LINK("html/body/div[3]/div[1]/div[2]/div[5]/div[3]/a[2]"),
     SHARE_FACEBOOK("html/body/div[6]/div[1]/ul/li[1]"),
     SHARE_TWEET("html/body/div[6]/div[1]/ul/li[2]"),

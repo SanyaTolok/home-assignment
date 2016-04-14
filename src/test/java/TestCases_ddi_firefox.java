@@ -2,16 +2,16 @@ import MainSettings.Settings;
 import Pages.*;
 import org.testng.annotations.Test;
 
-public class TestCases_ddi extends Settings
+public class TestCases_ddi_firefox extends Settings
 {
     @Test(priority = 0,invocationCount=2)
     public void add_discuss_comment()
     {Blog.discuss_add_comment();}
-    @Test(priority = 0)
-    public void remove_comment_blog()
-    {
-        Blog.remove_comment();
-    }
+//    @Test(priority = 0)
+//    public void remove_comment_blog()
+//    {
+//        Blog.remove_comment();
+//    }
     @Test(priority = 0)
     public void test_paging_blog()
     {

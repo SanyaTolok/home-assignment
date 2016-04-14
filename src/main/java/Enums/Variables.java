@@ -1,7 +1,5 @@
 package Enums;
 
-import javax.xml.ws.wsaddressing.W3CEndpointReferenceBuilder;
-
 public enum Variables
 {
     //HomePage
@@ -16,6 +14,14 @@ public enum Variables
     SUBSCRIBE(".//*[@id='email-subscribe']"),
     SIGN_UP(".//*[@id='footer']/div[1]/div/form/fieldset/div[2]/input[2]"),
     CONGRATS("html/body/div[2]/div/div/div/p"),
+    //Services
+    OPEN_MENU_SERVISES(".//*[@id='bs-example-navbar-collapse-1']/ul/li[6]/i[1]"),
+    CUSTOM_SERVICES(".//*[@id='bs-example-navbar-collapse-1']/ul/li[6]/ul/li[1]/a"),
+    NAME_SERVICES_FORM(".//*[@id='request-quote-name']"),
+    EMAIL_SERVICES_FORM(".//*[@id='request-quote-email']"),
+    PHONE_SERVICES_FORM(".//*[@id='request-quote-phone']"),
+    DESCRIPTION_SERVICES_FORM(".//*[@id='request-quote-message']"),
+    SEND_SERVICES_FORM(".//*[@id='submit']"),
     //Company
     OPEN_MENU(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/i[1]"),
     MANAGMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[1]/a"),
@@ -44,7 +50,7 @@ public enum Variables
     START_PROJECT_MESSAGE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[5]/textarea"),
     START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[6]/input"),
     START_PROJECT_CLOSE(".//*[@id='requestFormModal']/div/div/div[1]/button"),
-    //Contact Us Now form
+    //Contact Us form
     NAME_INPUT(".//*[@id='contact-form']/div/input[1]"),
     EMAIL_INPUT(".//*[@id='contact-form']/div/input[2]"),
     PHONE_INPUT(".//*[@id='contact-form']/div/input[3]"),

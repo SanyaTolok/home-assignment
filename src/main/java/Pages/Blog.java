@@ -36,7 +36,7 @@ public class Blog extends Settings {
     private static Button tab_marketing=new Button(By.xpath(Variables.MARKETING_TAB.toString()));
     private static Button tab_case=new Button(By.xpath(Variables.CASE_TAB.toString()));
     private static Button tab_programming=new Button(By.xpath(Variables.PROGRAMMING_TAB.toString()));
-    private static Button post=new Button(By.xpath(Variables.LIST_OF_POSTS.toString()));
+    private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();

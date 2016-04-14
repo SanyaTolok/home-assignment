@@ -1,9 +1,10 @@
 import MainSettings.Settings;
+import MainSettings.Settings_for_Chrome;
 import Pages.Company;
 import Pages.HomePage;
 import org.testng.annotations.Test;
 
-public class TestCases_didi_links extends Settings
+public class TestCases_didi_links extends Settings_for_Chrome
 {
     @Test(priority = 0)
     public void company_links_verify_present()

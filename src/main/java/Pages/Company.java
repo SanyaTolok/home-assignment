@@ -4,10 +4,11 @@ import Elements.Button;
 
 import Enums.Variables;
 import MainSettings.Settings;
+import MainSettings.Settings_for_Chrome;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class Company extends Settings {
+public class Company extends Settings_for_Chrome {
     private static Button company_link=new Button(By.xpath(Variables.COMPANY_LINK.toString()));
     private static Button managment_link=new Button(By.xpath(Variables.MANAGMENT_LINK.toString()));
     private static Button software_link=new Button(By.xpath(Variables.SOFTWARE_DEVELOPMENT_LINK.toString()));

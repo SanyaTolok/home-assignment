@@ -5,6 +5,7 @@ import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
+import MainSettings.Settings_for_Chrome;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,7 @@ import java.util.Set;
 
 import static org.testng.Assert.assertTrue;
 
-public class HomePage extends Settings {
+public class HomePage extends Settings_for_Chrome {
     private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
     private static Button start_project=new Button((By.xpath(Variables.START_PROJECT.toString())));
     private static Button close=new Button(By.xpath(Variables.START_PROJECT_CLOSE.toString()));

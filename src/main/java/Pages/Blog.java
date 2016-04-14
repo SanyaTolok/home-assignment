@@ -29,12 +29,31 @@ public class Blog extends Settings {
     private static TextField email=new TextField(By.xpath(Variables.DISQUS_EMAIL.toString()));
     private static TextField pass=new TextField(By.xpath(Variables.DISQUS_PASS.toString()));
     private static Button login_button=new Button(By.xpath(Variables.LOGIN_DISQUS.toString()));
-    private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
+    private static Button tab_all=new Button(By.xpath(Variables.ALL_TAB.toString()));
+    private static Button tab_cloud=new Button(By.xpath(Variables.CLOUD_TECHNOLOGY_TAB.toString()));
+    private static Button tab_company_news=new Button(By.xpath(Variables.COMPANY_NEWS_TAB.toString()));
+    private static Button tab_it_news=new Button(By.xpath(Variables.IT_NEWS_TAB.toString()));
+    private static Button tab_marketing=new Button(By.xpath(Variables.MARKETING_TAB.toString()));
+    private static Button tab_case=new Button(By.xpath(Variables.CASE_TAB.toString()));
+    private static Button tab_programming=new Button(By.xpath(Variables.PROGRAMMING_TAB.toString()));
+    private static Button post=new Button(By.xpath(Variables.LIST_OF_POSTS.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
-        Settings.waitInSeconds(12);
-        close_subscription_popup.click();
+        tab_case.isPresent();
+        tab_case.click();
+        tab_cloud.isPresent();
+        tab_cloud.click();
+        tab_all.isPresent();
+        tab_all.click();
+        tab_company_news.isPresent();
+        tab_company_news.click();
+        tab_it_news.isPresent();
+        tab_it_news.click();
+        tab_marketing.isPresent();
+        tab_marketing.click();
+        tab_programming.isPresent();
+        tab_programming.click();
         return new Blog();
     }
     public static Blog share_facebook()
@@ -185,6 +204,7 @@ public class Blog extends Settings {
         driver.switchTo().window(parentWindowHandler);
         driver.switchTo().frame("dsq-app2");
         List<WebElement> posts = getDriver().findElements(By.xpath(Variables.LIST_OF_POSTS.toString()));
+        posts.toArray().toString();
             if (posts.contains("simple comment ddi-dev.test"))
             {
                 Button dropdown=new Button(By.xpath(Variables.DROPDOWN.toString()));

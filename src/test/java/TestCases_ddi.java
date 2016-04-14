@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class TestCases_ddi extends Settings
 {
-    @Test(priority = 0)
+    @Test(priority = 0,invocationCount=2)
     public void add_discuss_comment()
     {Blog.discuss_add_comment();}
     @Test(priority = 0)

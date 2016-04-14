@@ -98,7 +98,7 @@ public class HomePage extends Settings_for_Chrome {
     public static void get_coockie() {
         boolean subscription_added = false;
         Set<Cookie> all_cookie;
-        Settings.waitInSeconds(10);
+        Settings.waitInSeconds(15);
         close_subscription_popup.click();
         driver.navigate().refresh();
         Settings.waitInSeconds(2);

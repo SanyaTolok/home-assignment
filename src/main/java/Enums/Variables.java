@@ -21,7 +21,7 @@ public enum Variables
     EMAIL_SERVICES_FORM(".//*[@id='request-quote-email']"),
     PHONE_SERVICES_FORM(".//*[@id='request-quote-phone']"),
     DESCRIPTION_SERVICES_FORM(".//*[@id='request-quote-message']"),
-    SEND_SERVICES_FORM(".//*[@id='submit']"),
+    SEND_SERVICES_FORM("//button[@class='btn send col-lg-2 col-md-2 col-sm-3 col-xs-6'and @name='send-form-sf'and @id='submit']"),
     //Company
     OPEN_MENU(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/i[1]"),
     MANAGMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[1]/a"),

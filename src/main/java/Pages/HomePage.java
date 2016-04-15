@@ -5,18 +5,14 @@ import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import MainSettings.Settings_for_Chrome;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import java.util.Set;
-
 import static org.testng.Assert.assertTrue;
 
-public class HomePage extends Settings_for_Chrome {
-    private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
+public class HomePage extends Settings {
+
     private static Button start_project=new Button((By.xpath(Variables.START_PROJECT.toString())));
     private static Button close=new Button(By.xpath(Variables.START_PROJECT_CLOSE.toString()));
     private static Button send=new Button(By.xpath(Variables.START_PROJECT_SEND_BUTTON.toString()));
@@ -32,6 +28,7 @@ public class HomePage extends Settings_for_Chrome {
         try {
 
             services_link = getDriver().findElement(By.xpath(Variables.SERVICES_LINK.toString()));
+            services_link.click();
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -93,25 +90,6 @@ public class HomePage extends Settings_for_Chrome {
         }
         assertTrue(portfolio_link != null, "Test case is FAILED -PORTFOLIO LINK is ABSENT!!!");
 
-    }
-
-    public static void get_coockie() {
-        boolean subscription_added = false;
-        Set<Cookie> all_cookie;
-        Settings.waitInSeconds(15);
-        close_subscription_popup.click();
-        driver.navigate().refresh();
-        Settings.waitInSeconds(2);
-        try {
-            all_cookie=driver.manage().getCookies();
-            all_cookie.toArray();
-            if (all_cookie.contains("subscribePopUP=1")) subscription_added = true;
-        }
-        catch (NullPointerException e)
-        {
-            e.printStackTrace();
-        }
-        Assert.assertTrue(subscription_added == false, "Test case is FAILED -subscription not added");
     }
     public static HomePage send_request()
     {

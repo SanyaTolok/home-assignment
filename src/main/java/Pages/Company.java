@@ -4,11 +4,10 @@ import Elements.Button;
 
 import Enums.Variables;
 import MainSettings.Settings;
-import MainSettings.Settings_for_Chrome;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class Company extends Settings_for_Chrome {
+public class Company extends Settings {
     private static Button company_link=new Button(By.xpath(Variables.COMPANY_LINK.toString()));
     private static Button managment_link=new Button(By.xpath(Variables.MANAGMENT_LINK.toString()));
     private static Button software_link=new Button(By.xpath(Variables.SOFTWARE_DEVELOPMENT_LINK.toString()));
@@ -21,16 +20,13 @@ public class Company extends Settings_for_Chrome {
         if(current_url.contains("http://ddi-dev.com/company/")) {
             open_menu.click();
             managment_link.click();
+            Settings.waitInSeconds(2);
             open_menu.click();
             software_link.click();
-            test = true;
-            Assert.assertTrue(test==true,"Company link present and all link inside are found");
-
-
-        }
+             }
             else
         {
-        Assert.assertTrue(test==false,"Company link is not present");
+        Assert.assertTrue(test==true,"Company link is not present");
         }
         return new Company();
     }

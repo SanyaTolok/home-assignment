@@ -12,12 +12,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+import static Enums.Variables.SEND_SERVICES_FORM;
+
 
 public class Services extends Settings {
     private static Button services_link = new Button(By.xpath(Variables.OPEN_MENU_SERVISES.toString()));
     private static Button contact_us= new Button(By.xpath(Variables.CONTACTS_LINK.toString()));
-    private static Button send=new Button(By.xpath(Variables.SEND_SERVICES_FORM.toString()));
-    private static Element send1=new Element(By.xpath(Variables.SEND_SERVICES_FORM.toString()));
+    private static Button send=new Button(By.xpath(SEND_SERVICES_FORM.toString()));
+    private static Element send1=new Element(By.xpath(SEND_SERVICES_FORM.toString()));
     private static TextField name = new TextField(By.xpath(Variables.NAME_SERVICES_FORM.toString()));
     private static TextField email = new TextField(By.xpath(Variables.EMAIL_SERVICES_FORM.toString()));
     private static TextField phone = new TextField(By.xpath(Variables.PHONE_SERVICES_FORM.toString()));
@@ -38,17 +40,16 @@ public class Services extends Settings {
         phone.enterText("17183559302");
         email.enterText("test@ddi-dev.com");
         description.enterText("Automation test of services form");
-
-//        Actions action = new Actions(driver);//creating of new action
-//        Actions actions;
-//        actions = action.moveToElement((WebElement) send1);//This action move to element by xpath
-//        actions.perform();// This action hover on button send
         try {
-            send.click();
+            Actions action = new Actions(driver);//creating of new action
+            Actions actions;
+            actions = action.moveToElement(driver.findElement(By.xpath(String.valueOf(SEND_SERVICES_FORM)))).click();//This action move to element by xpath
+            actions.perform();// This action hover on button send
+            //send.click();
         }
         catch (ElementNotVisibleException e)
         {
-            Assert.fail("button visible but it is impossible to click on it");
+            Assert.fail("button is not visible but it is impossible to click on it");
         }
 
         Settings.waitInSeconds(5);

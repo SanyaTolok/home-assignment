@@ -1,5 +1,4 @@
 package Pages;
-
 import Elements.Button;
 import Elements.Element;
 import Elements.TextField;
@@ -8,7 +7,6 @@ import MainSettings.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -49,7 +47,7 @@ public class Services extends Settings {
         }
         catch (ElementNotVisibleException e)
         {
-            Assert.fail("button is not visible but it is impossible to click on it");
+            Assert.fail("button is not visible it is impossible to hover on it");
         }
 
         Settings.waitInSeconds(5);

@@ -42,7 +42,7 @@ public enum Variables
     PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/a"),
     NEXT_PAGE(".//*[@id='paginator']/ul/li[7]/a"),
     SECOND_PAGE(".//*[@id='paginator']/ul/li[3]/a"),
-    THIRD_PAGE(""),
+    THIRD_PAGE(".//*[@id='mapDiv']/div/div[11]/div/div/div[3]"),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),
@@ -57,6 +57,9 @@ public enum Variables
     MESSAGE_TEXTFIELD(".//*[@id='contact-form']/div/textarea"),
     SENT_BUTTON(".//*[@id='contact-form']/div/div[2]/button"),
     ADD_FILE(".//*[@id='contact-form']/div/div[2]/div[1]/input"),
+    ZOOM_IN(".//*[@id='mapDiv']/div/div[11]/div/div/div[1]"),
+    ZOOM_OUT(".//*[@id='mapDiv']/div/div[11]/div/div/div[3]"),
+    CHANGE_TO_USA_LOCATION(".//*[@id='myTab']/li[2]/a/h2"),
     //Blog
     ALL_TAB("html/body/div[2]/div/div/ul/li[1]/a"),
     IT_NEWS_TAB("html/body/div[2]/div/div/ul/li[2]/a"),

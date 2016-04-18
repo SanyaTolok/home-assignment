@@ -4,6 +4,11 @@ import org.testng.annotations.Test;
 
 public class TestCases_ddi_firefox extends Settings
 {
+    @Test(priority = 0)
+    public void zoom_map_contuct_us()
+    {
+        Contact_US.zoom_in_and_zoom_out_map();
+    }
     @Test(priority = 0,invocationCount=2)
     public void add_discuss_comment()
     {Blog.discuss_add_comment();}

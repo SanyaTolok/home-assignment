@@ -16,8 +16,10 @@ public class Contact_US extends Settings
     private static TextField message=new TextField(By.xpath(Variables.MESSAGE_TEXTFIELD.toString()));
     private static Button sent= new Button(By.xpath(Variables.SENT_BUTTON.toString()));
     //private static TextField add_file= new TextField(By.xpath(Variables.ADD_FILE.toString()));
-    public static Contact_US send_request()
-    {
+    private static Button zoom_in=new Button(By.xpath(Variables.ZOOM_IN.toString()));
+    private static Button zoom_out=new Button(By.xpath(Variables.ZOOM_OUT.toString()));
+    private static Button change_to_usa_location= new Button(By.xpath(Variables.CHANGE_TO_USA_LOCATION.toString()));
+    public static Contact_US send_request() {
         contact_us.click();
         Settings.waitInSeconds(12);
         close_subscription_popup.click();
@@ -30,4 +32,17 @@ public class Contact_US extends Settings
         sent.click();
         return new Contact_US();
     }
-}
+    public static Contact_US zoom_in_and_zoom_out_map()
+    {
+        contact_us.click();
+        Settings.waitInSeconds(2);
+        change_to_usa_location.click();
+        driver.switchTo().frame("usa-map");
+        zoom_in.click();
+        zoom_in.click();
+        zoom_out.click();
+        zoom_out.click();
+        return new Contact_US();
+    }
+    }
+

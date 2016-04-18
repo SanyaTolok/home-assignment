@@ -7,6 +7,7 @@ import MainSettings.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -17,7 +18,6 @@ public class Services extends Settings {
     private static Button services_link = new Button(By.xpath(Variables.OPEN_MENU_SERVISES.toString()));
     private static Button contact_us= new Button(By.xpath(Variables.CONTACTS_LINK.toString()));
     private static Button send=new Button(By.xpath(SEND_SERVICES_FORM.toString()));
-    private static Element send1=new Element(By.xpath(SEND_SERVICES_FORM.toString()));
     private static TextField name = new TextField(By.xpath(Variables.NAME_SERVICES_FORM.toString()));
     private static TextField email = new TextField(By.xpath(Variables.EMAIL_SERVICES_FORM.toString()));
     private static TextField phone = new TextField(By.xpath(Variables.PHONE_SERVICES_FORM.toString()));
@@ -39,11 +39,9 @@ public class Services extends Settings {
         email.enterText("test@ddi-dev.com");
         description.enterText("Automation test of services form");
         try {
-            Actions action = new Actions(driver);//creating of new action
-            Actions actions;
-            actions = action.moveToElement(driver.findElement(By.xpath(String.valueOf(SEND_SERVICES_FORM)))).click();//This action move to element by xpath
-            actions.perform();// This action hover on button send
-            //send.click();
+            WebElement send_hover = driver.findElement(By.xpath(Variables.SEND_SERVICES_FORM.toString()));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
+            send.click();
         }
         catch (ElementNotVisibleException e)
         {

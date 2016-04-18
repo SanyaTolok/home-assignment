@@ -1,12 +1,15 @@
 package Pages;
 
 import Elements.Button;
+import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -27,13 +30,14 @@ public class Portfolio extends Settings{
     private static Button eterprice_tab=new Button(By.xpath(Variables.ENTERPRICE_SOFTWARE_TAB.toString()));
     private static Button cloud_tab=new Button(By.xpath(Variables.CLOUD_SOLUTION_TAB.toString()));
     private static Button all_tab=new Button(By.xpath(Variables.TAB_ALL.toString()));
-    private static Button article=new Button(By.xpath(Variables.PORTFOLIO_ARTICLE.toString()));
+    private static Button article_portfolio=new Button(By.xpath(Variables.PORTFOLIO_ARTICLE.toString()));
     private static Button next=new Button(By.xpath(Variables.NEXT_PAGE_PORTFOLIO.toString()));
     private static Button previous= new Button(By.xpath(Variables.PREVIOUS_PAGE_PORTFOLIO.toString()));
     public static Portfolio get_more_info()
     {
         portfolio_link.click();
         get_more.click();
+        Settings.waitInSeconds(2);
         mobile.click();
         web.click();
         cloud.click();
@@ -59,10 +63,9 @@ public class Portfolio extends Settings{
         mobile_tab.click();
         try
         {
-            Actions action = new Actions(driver);//creating of new action
-            Actions actions;
-            actions = action.moveToElement(driver.findElement(By.xpath(String.valueOf(PORTFOLIO_ARTICLE)))).click();//This action move to element by xpath
-            actions.perform();// This action hover on button send
+            WebElement article = driver.findElement(By.xpath(Variables.PORTFOLIO_ARTICLE.toString()));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", article);
+            article_portfolio.click();
         }
         catch (ElementNotVisibleException e)
         {

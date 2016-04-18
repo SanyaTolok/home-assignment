@@ -6,6 +6,12 @@ import Enums.Variables;
 import MainSettings.Settings;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+
+import static Enums.Variables.PORTFOLIO_ARTICLE;
+import static Enums.Variables.SEND_SERVICES_FORM;
 
 public class Portfolio extends Settings{
     private static Button get_more=new Button(By.xpath(Variables.GET_MORE_BUTTON.toString()));
@@ -21,6 +27,9 @@ public class Portfolio extends Settings{
     private static Button eterprice_tab=new Button(By.xpath(Variables.ENTERPRICE_SOFTWARE_TAB.toString()));
     private static Button cloud_tab=new Button(By.xpath(Variables.CLOUD_SOLUTION_TAB.toString()));
     private static Button all_tab=new Button(By.xpath(Variables.TAB_ALL.toString()));
+    private static Button article=new Button(By.xpath(Variables.PORTFOLIO_ARTICLE.toString()));
+    private static Button next=new Button(By.xpath(Variables.NEXT_PAGE_PORTFOLIO.toString()));
+    private static Button previous= new Button(By.xpath(Variables.PREVIOUS_PAGE_PORTFOLIO.toString()));
     public static Portfolio get_more_info()
     {
         portfolio_link.click();
@@ -41,6 +50,27 @@ public class Portfolio extends Settings{
         eterprice_tab.click();
         cloud_tab.click();
         all_tab.click();
+        return new Portfolio();
+    }
+    public static Portfolio paging_portfolio()
+    {
+        portfolio_link.click();
+        Settings.waitInSeconds(2);
+        mobile_tab.click();
+        try
+        {
+            Actions action = new Actions(driver);//creating of new action
+            Actions actions;
+            actions = action.moveToElement(driver.findElement(By.xpath(String.valueOf(PORTFOLIO_ARTICLE)))).click();//This action move to element by xpath
+            actions.perform();// This action hover on button send
+        }
+        catch (ElementNotVisibleException e)
+        {
+            Assert.fail("button is not visible it is impossible to hover on it");
+        }
+
+        next.click();
+        previous.click();
         return new Portfolio();
     }
 }

@@ -5,7 +5,12 @@ import org.testng.annotations.Test;
 public class TestCases_ddi_firefox extends Settings
 {
     @Test(priority = 0)
-    public void zoom_map_contuct_us()
+    public void paging_portfolio()
+    {
+        Portfolio.paging_portfolio();
+    }
+    @Test(priority = 0)
+    public void zoom_map_contact_us()
     {
         Contact_US.zoom_in_and_zoom_out_map();
     }

@@ -42,7 +42,9 @@ public enum Variables
     PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/a"),
     NEXT_PAGE(".//*[@id='paginator']/ul/li[7]/a"),
     SECOND_PAGE(".//*[@id='paginator']/ul/li[3]/a"),
-    THIRD_PAGE(".//*[@id='mapDiv']/div/div[11]/div/div/div[3]"),
+    PORTFOLIO_ARTICLE("//h2[@class='p-title-20-regular' and contains(text(),'Pay Today')]"),
+    NEXT_PAGE_PORTFOLIO("html/body/div[2]/div/div/div/div/div[3]/a"),
+    PREVIOUS_PAGE_PORTFOLIO("html/body/div[2]/div/div/div/div/div[3]/a"),
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

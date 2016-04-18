@@ -14,16 +14,10 @@ public class TestCases_ddi_firefox extends Settings
     {
         Contact_US.zoom_in_and_zoom_out_map();
     }
-    @Test(priority = 0,invocationCount=2)
-    public void add_discuss_comment()
-    {Blog.discuss_add_comment();}
-//    @Test(priority = 0)
-//    public void remove_comment_blog()
-//    {
-//        Blog.remove_comment();
-//    }
-@Test(priority = 0)
-public void company_links_verify_present()
+    @Test(priority = 0,invocationCount=1)
+    public void add_discuss_comment() {Blog.discuss_add_comment();}
+    @Test(priority = 0)
+    public void company_links_verify_present()
 {
     Company.company_links_present();
 }
@@ -38,8 +32,7 @@ public void company_links_verify_present()
         Portfolio.tabs_exsist_and_works();
     }
     @Test(priority = 0)
-    public void get_more_info_portfolio()
-    {
+    public void get_more_info_portfolio()    {
         Portfolio.get_more_info();}
     @Test(priority = 0)
     public void send_request()
@@ -47,8 +40,7 @@ public void company_links_verify_present()
         HomePage.send_request();
     }
     @Test(priority = 0)
-    public void verify_subscription()
-    {HomePage.subscribe_email();}
+    public void verify_subscription() {HomePage.subscribe_email();}
     @Test(priority = 0)
     public void test_blog_tabs()
     {
@@ -65,11 +57,9 @@ public void company_links_verify_present()
         Blog.share_tweet();
     }
     @Test(priority = 0)
-    public void share_blog_linked_in()
-    {Blog.share_linked_in();}
+    public void share_blog_linked_in()  {Blog.share_linked_in();}
     @Test(priority = 0)
-    public void send_request_contact_us()
-    {Contact_US.send_request();}
+    public void send_request_contact_us()  {Contact_US.send_request();}
     @Test(priority = 0)
     public void test_services_form()
     {
@@ -86,8 +76,7 @@ public void company_links_verify_present()
         HomePage.blog_link_present();
     }
     @Test(priority = 1)
-    public void company_link_present()
-    {        HomePage.company_link_present();    }
+    public void company_link_present()   { HomePage.company_link_present(); }
     @Test(priority = 1)
     public void contuct_us_link_present()
     {
@@ -108,4 +97,9 @@ public void company_links_verify_present()
     {
         Technology.get_coockie();
     }
+    //    @Test(priority = 0)
+//    public void remove_comment_blog()
+//    {
+//        Blog.remove_comment();
+//    }
 }

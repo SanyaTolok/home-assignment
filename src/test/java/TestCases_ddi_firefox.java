@@ -3,7 +3,16 @@ import Pages.*;
 import org.testng.annotations.Test;
 
 public class TestCases_ddi_firefox extends Settings
-{
+{   @Test(priority = 0)
+    public void verify_links_management_CEO() {Management.verify_links_CEO();}
+    @Test(priority = 0)
+    public void verify_links_bdm_Europa(){Management.verify_links_bdm_Europa();}
+    @Test(priority = 0)
+    public void verify_links_bdm_America(){Management.verify_links_bdm_America();}
+    @Test(priority = 0)
+    public void verify_links_head_marketing(){Management.verify_links_head_marketing_department();}
+    @Test(priority = 0)
+    public void verify_links_pr_manager(){Management.verify_links_pr_manager();}
     @Test(priority = 0)
     public void paging_portfolio()
     {

@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 public class Company extends Settings {
     private static Button company_link=new Button(By.xpath(Variables.COMPANY_LINK.toString()));
-    private static Button managment_link=new Button(By.xpath(Variables.MANAGMENT_LINK.toString()));
+    private static Button management_link=new Button(By.xpath(Variables.MANAGMENT_LINK.toString()));
     private static Button software_link=new Button(By.xpath(Variables.SOFTWARE_DEVELOPMENT_LINK.toString()));
     private static Button open_menu=new Button(By.xpath(Variables.OPEN_MENU.toString()));
     public static Company company_links_present()
@@ -19,7 +19,7 @@ public class Company extends Settings {
         String current_url= driver.getCurrentUrl();
         if(current_url.contains("http://ddi-dev.com/company/")) {
             open_menu.click();
-            managment_link.click();
+            management_link.click();
             Settings.waitInSeconds(2);
             open_menu.click();
             software_link.click();

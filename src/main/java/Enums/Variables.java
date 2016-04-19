@@ -26,6 +26,17 @@ public enum Variables
     OPEN_MENU(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/i[1]"),
     MANAGMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[1]/a"),
     SOFTWARE_DEVELOPMENT_LINK(".//*[@id='bs-example-navbar-collapse-1']/ul/li[5]/ul/li[2]/a"),
+    //Management
+    CEO_FACEBOOK("html/body/div[3]/div/article/div[1]/div/a[2]/img"),
+    CEO_LINKED_IN("html/body/div[3]/div/article/div[1]/div/a[3]/img"),
+    BDM_EUROPA_FACEBOOK("html/body/div[3]/div/article/div[2]/div/a[1]/img"),
+    BDM_EUROPA_LINKED_IN("html/body/div[3]/div/article/div[2]/div/a[2]/img"),
+    BDM_AMERICA_FACEBOOK("html/body/div[3]/div/article/div[4]/div/a[1]/img"),
+    BDM_AMERICA_LINKED_IN("html/body/div[3]/div/article/div[4]/div/a[2]/img"),
+    HMD_FACEBOOK("html/body/div[3]/div/article/div[5]/div/a[1]/img"),
+    HMD_LINKED_IN("html/body/div[3]/div/article/div[5]/div/a[2]/img"),
+    PR_FACEBOOK("html/body/div[3]/div/article/div[7]/div/a[1]/img"),
+    PR_LINKED_IN("html/body/div[3]/div/article/div[7]/div/a[2]/img"),
     //Portfolio
     GET_MORE_BUTTON("html/body/div[3]/div/div[1]/div[2]/div[2]/button"),
     MOBILE(".//*[@id='request-form']/div/div/div[1]/div/div[1]/label/span"),

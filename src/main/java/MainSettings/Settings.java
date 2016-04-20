@@ -4,6 +4,7 @@ import TrackReporting.CaptureScreenShotOnFailureListener;
 import TrackReporting.LoggingEventListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.annotations.AfterMethod;
@@ -20,7 +21,7 @@ public class Settings {
     @BeforeMethod
     public void setUp()
     {
-        driver = new EventFiringWebDriver(new FirefoxDriver()).register(eventListener);
+        driver = new EventFiringWebDriver(new PhantomJSDriver()).register(eventListener);
         getDriver().get(baseURL);
         mainPage = new HomePage();
         driver.manage().window().maximize();

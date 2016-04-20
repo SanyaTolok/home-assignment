@@ -30,7 +30,7 @@ public enum Variables
     CEO_FACEBOOK("html/body/div[3]/div/article/div[1]/div/a[2]/img"),
     CEO_LINKED_IN("html/body/div[3]/div/article/div[1]/div/a[3]/img"),
     BDM_EUROPA_FACEBOOK("html/body/div[3]/div/article/div[2]/div/a[1]/img"),
-    BDM_EUROPA_LINKED_IN("html/body/div[3]/div/article/div[2]/div/a[2]/img"),
+    BDM_EUROPA_LINKED_IN("//a[@href='https://www.facebook.com/roma.dereka']"),
     BDM_AMERICA_FACEBOOK("html/body/div[3]/div/article/div[4]/div/a[1]/img"),
     BDM_AMERICA_LINKED_IN("html/body/div[3]/div/article/div[4]/div/a[2]/img"),
     HMD_FACEBOOK("html/body/div[3]/div/article/div[5]/div/a[1]/img"),

@@ -124,13 +124,14 @@ public class Management extends Settings
         while(iterator.hasNext())
         {
             subWindowHandler = iterator.next();
-            driver.switchTo().window(parentWindowHandler);
 
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
         String url_facebook = driver.getCurrentUrl();
+        Settings.waitInSeconds(5);
         if(url_facebook.contains("https://www.facebook.com/shyhimaha")) {
             driver.close();
+            driver.switchTo().window(parentWindowHandler);
         }
         else
         {
@@ -175,13 +176,15 @@ public class Management extends Settings
         String url_facebook = driver.getCurrentUrl();
         if(url_facebook.contains("https://www.facebook.com/alex.kuzenko1")) {
             driver.close();
+            driver.switchTo().window(parentWindowHandler);
         }
         else
         {
             Assert.fail("Test failed");//show error message if link is incorrect
 
         }
-        driver.switchTo().window(parentWindowHandler);
+        Settings.waitInSeconds(2);
+        driver.navigate().refresh();
         hmd_linked_in.click();
         String url_linkedin = driver.getCurrentUrl();
         if(url_linkedin.contains("https://ua.linkedin.com/in/alexey-kutsenko-12807566"))

@@ -73,7 +73,6 @@ public class Management extends Settings
         WebElement bdm_facebook = driver.findElement(By.xpath(Variables.BDM_EUROPA_FACEBOOK.toString()));
         Actions newwin = new Actions(driver);
         newwin.keyDown(Keys.SHIFT).click(bdm_facebook).keyUp(Keys.SHIFT).build().perform();
-        Settings.waitInSeconds(5);
         String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles
@@ -87,15 +86,17 @@ public class Management extends Settings
         String url_facebook_bdm = driver.getCurrentUrl();
         if(url_facebook_bdm.contains("https://www.facebook.com/roma.dereka")) {
             driver.close();
+            driver.switchTo().window(parentWindowHandler);
         }
         else
         {
             Assert.fail("Test failed");//show error message if link is incorrect
 
         }
-        driver.switchTo().window(parentWindowHandler);
+        Settings.waitInSeconds(2);
+        driver.navigate().refresh();
         bdm_europa_linked_in.click();
-        Settings.waitInSeconds(5);
+        Settings.waitInSeconds(2);
         String url_linkedin = driver.getCurrentUrl();
         if(url_linkedin.contains("https://ua.linkedin.com/in/roman-dereka-89a80259"))
         {
@@ -123,6 +124,7 @@ public class Management extends Settings
         while(iterator.hasNext())
         {
             subWindowHandler = iterator.next();
+            driver.switchTo().window(parentWindowHandler);
 
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
@@ -135,7 +137,8 @@ public class Management extends Settings
             Assert.fail("Test failed");//show error message if link is incorrect
 
         }
-        driver.switchTo().window(parentWindowHandler);
+        Settings.waitInSeconds(2);
+        driver.navigate().refresh();
         bdm_america_linked_in.click();
         String url_linkedin = driver.getCurrentUrl();
         if(url_linkedin.contains("https://ua.linkedin.com/in/antonshygimaga"))

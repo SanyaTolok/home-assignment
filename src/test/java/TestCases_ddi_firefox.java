@@ -5,12 +5,12 @@ import org.testng.annotations.Test;
 public class TestCases_ddi_firefox extends Settings
 {   @Test(priority = 0)
     public void verify_links_management_CEO() {Management.verify_links_CEO();}
-    //@Test(priority = 0)
-    //public void verify_links_bdm_Europa(){Management.verify_links_bdm_Europa();}
-    //@Test(priority = 0)
-    //public void verify_links_bdm_America(){Management.verify_links_bdm_America();}
-    //@Test(priority = 0)
-    //public void verify_links_head_marketing(){Management.verify_links_head_marketing_department();}
+    @Test(priority = 0)
+    public void verify_links_bdm_Europa(){Management.verify_links_bdm_Europa();}
+    @Test(priority = 0)
+    public void verify_links_bdm_America(){Management.verify_links_bdm_America();}
+    @Test(priority = 0)
+    public void verify_links_head_marketing(){Management.verify_links_head_marketing_department();}
     @Test(priority = 0)
     public void verify_links_pr_manager(){Management.verify_links_pr_manager();}
     @Test(priority = 0)
@@ -25,12 +25,12 @@ public class TestCases_ddi_firefox extends Settings
     public void test_paging_blog() {Blog.test_paging(); }
     @Test(priority = 0)
     public void portfolio_tabs_exsist_and_works() { Portfolio.tabs_exsist_and_works();    }
-    //@Test(priority = 0)
-    //public void get_more_info_portfolio(){Portfolio.get_more_info();}
-    //@Test(priority = 0)
-    //public void send_request() {   HomePage.send_request();    }
-    //@Test(priority = 0)
-    //public void verify_subscription() {HomePage.subscribe_email();}
+    @Test(priority = 0)
+    public void get_more_info_portfolio(){Portfolio.get_more_info();}
+    @Test(priority = 0)
+    public void send_request() {   HomePage.send_request();    }
+    @Test(priority = 0)
+    public void verify_subscription() {HomePage.subscribe_email();}
     @Test(priority = 0)
     public void test_blog_tabs() {  Blog.all_tabs_exsist();}
     @Test(priority = 0)
@@ -39,10 +39,10 @@ public class TestCases_ddi_firefox extends Settings
     public void share_blog_tweet() { Blog.share_tweet();}
     @Test(priority = 0)
     public void share_blog_linked_in()  {Blog.share_linked_in();}
-    //@Test(priority = 0)
-    //public void send_request_contact_us()  {Contact_US.send_request();}
-    //@Test(priority = 0)
-    //public void test_services_form() {Services.get_request_from_services_page();}
+    @Test(priority = 0)
+    public void send_request_contact_us()  {Contact_US.send_request();}
+    @Test(priority = 0)
+    public void test_services_form() {Services.get_request_from_services_page();}
     @Test(priority = 1)
     public void services_link_present() {HomePage.services_link_present();}
     @Test(priority = 1)
@@ -57,9 +57,9 @@ public class TestCases_ddi_firefox extends Settings
     public void technology_link_present() {HomePage.technology_link_present();}
     @Test(priority = 1)
     public void get_subscription_cookie() {Technology.get_coockie();}
-    //    @Test(priority = 0)
-//    public void remove_comment_blog()
-//    {
-//        Blog.remove_comment();
-//    }
+    @Test(priority = 0)
+    public void remove_comment_blog()
+    {
+        Blog.remove_comment();
+    }
 }

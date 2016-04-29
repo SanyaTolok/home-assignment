@@ -3,8 +3,8 @@ import Elements.Button;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import java.util.Iterator;
 import java.util.List;
@@ -179,44 +179,40 @@ public class Blog extends Settings {
         post.click();
         return new Blog();
     }
-//    public static Blog remove_comment() {
-//        blog_link.click();
-//        article.waitForElementIsPresent();
-//        article.click();
-//        Settings.waitInSeconds(14);
-//        close_subscription_popup.click();
-//        driver.switchTo().frame("dsq-app2");
-//        activate.click();
-//        start_discuss.waitForElementIsPresent();
-//        start_discuss.enterText("simple comment ddi-dev.test");
-//        disqus_login.click();
-//        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
-//        String subWindowHandler = null;
-//        Set<String> handles = driver.getWindowHandles(); // get all window handles
-//        Iterator<String> iterator = handles.iterator();
-//        while (iterator.hasNext()) {
-//            subWindowHandler = iterator.next();
-//        }
-//        driver.switchTo().window(subWindowHandler); // switch to popup window
-//        email.enterText("jasonbrienflocktoo@gmail.com");
-//        pass.enterText("ddi-dev.tests");
-//        login_button.click();
-//        driver.switchTo().window(parentWindowHandler);
-//        driver.switchTo().frame("dsq-app2");
-//        List<WebElement> posts = getDriver().findElements(By.xpath(Variables.LIST_OF_POSTS.toString()));
-//        posts.toArray().toString();
-//            if (posts.contains("simple comment ddi-dev.test"))
-//            {
-//                Button dropdown=new Button(By.xpath(Variables.DROPDOWN.toString()));
-//                dropdown.click();
-//                Button delete=new Button(By.xpath(Variables.DELETE.toString()));
-//                delete.click();
-//                driver.switchTo().alert().accept();
-//            }
-//        else
-//            {
-//                Assert.fail("post not removed");
-//            }
-//        return new Blog();
-//    }
+    public static Blog remove_comment() {
+        blog_link.click();
+        article.waitForElementIsPresent();
+        article.click();
+        Settings.waitInSeconds(14);
+        close_subscription_popup.click();
+        driver.switchTo().frame("dsq-app2");
+        activate.click();
+        disqus_login.click();
+        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+        String subWindowHandler = null;
+        Set<String> handles = driver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while (iterator.hasNext()) {
+            subWindowHandler = iterator.next();
+        }
+        driver.switchTo().window(subWindowHandler); // switch to popup window
+        email.enterText("jasonbrienflocktoo@gmail.com");
+        pass.enterText("ddi-dev.tests");
+        login_button.click();
+        driver.switchTo().window(parentWindowHandler);
+        driver.switchTo().frame("dsq-app2");
+        try {
+            WebElement dropdown = driver.findElement(By.xpath(Variables.DROPDOWN.toString()));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+            dropdown.click();
+             Button delete=new Button(By.xpath(Variables.DELETE.toString()));
+             delete.click();
+             driver.switchTo().alert().accept();
+            }
+        catch (ElementNotVisibleException e)
+            {
+                Assert.fail("post not removed");
+            }
+        return new Blog();
+    }
 }

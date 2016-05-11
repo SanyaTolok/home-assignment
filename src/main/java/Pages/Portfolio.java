@@ -62,18 +62,19 @@ public class Portfolio extends Settings{
         Settings.waitInSeconds(2);
         mobile_tab.click();
         try
-        {
+        {   Settings.waitInSeconds(2);
             WebElement article = driver.findElement(By.xpath(Variables.PORTFOLIO_ARTICLE.toString()));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", article);
+            Settings.waitInSeconds(2);
             article_portfolio.click();
+            next.click();
+            Settings.waitInSeconds(2);
+            previous.click();
         }
         catch (ElementNotVisibleException e)
         {
             Assert.fail("button is not visible it is impossible to hover on it");
         }
-
-        next.click();
-        previous.click();
         return new Portfolio();
     }
 }

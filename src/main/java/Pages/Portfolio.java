@@ -1,7 +1,6 @@
 package Pages;
 
 import Elements.Button;
-import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;

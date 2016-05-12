@@ -47,9 +47,6 @@ public class Services extends Settings {
         {
             Assert.fail("button is not visible it is impossible to hover on it");
         }
-
-        Settings.waitInSeconds(5);
-        contact_us.click();
         return new Services();
     }
 }

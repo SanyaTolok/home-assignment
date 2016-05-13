@@ -22,6 +22,8 @@ public class TestCases_ddi_firefox extends Settings
     @Test(priority = 0)
     public void company_links_verify_present(){Company.company_links_present();}
     @Test(priority = 0)
+    public void how_we_work_links_verify_present(){}
+    @Test(priority = 0)
     public void test_paging_blog() {Blog.test_paging(); }
     @Test(priority = 0)
     public void portfolio_tabs_exsist_and_works() { Portfolio.tabs_exsist_and_works();    }

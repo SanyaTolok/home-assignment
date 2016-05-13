@@ -14,6 +14,7 @@ public enum Variables
     SUBSCRIBE(".//*[@id='email-subscribe']"),
     SIGN_UP(".//*[@id='footer']/div[1]/div/form/fieldset/div[2]/input[2]"),
     CONGRATS("html/body/div[2]/div/div/div/p"),
+    HOW_WE_WORK(".//*[@id='nav']/ul/li[2]/a"),
     //Services
     OPEN_MENU_SERVISES(".//*[@id='bs-example-navbar-collapse-1']/ul/li[7]/i[1]"),
     CUSTOM_SERVICES(".//*[@id='bs-example-navbar-collapse-1']/ul/li[7]/ul/li[1]/a"),

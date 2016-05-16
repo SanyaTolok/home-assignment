@@ -98,7 +98,14 @@ public enum Variables
     DISQUS_PASS(".//*[@id='auth-form']/div[3]/input"),
     LOGIN_DISQUS(".//*[@id='auth-form-button']"),
     POST_COMMENT_BUTTON(".//*[@id='form']/form/div/div[3]/div[5]/div/section/div/button"),
-    ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span");
+    ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span"),
+    //How we work
+    TIME_MATERIALS(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[3]/a"),
+    FIXED_PRICE(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[1]/a"),
+    DEDICATED_TEAM(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[2]/a"),
+    INNOVATION_LABS(".//*[@id='main']/section[6]/div/div[1]/div[2]/a"),
+    EXHAUSTIVE_DELIVERY(".//*[@id='main']/section[6]/div/div[1]/div[3]/a"),
+    OFF_THE_GROUP(".//*[@id='main']/section[6]/div/div[1]/div[1]/a");
     private String text;
     private Variables(String text)
     {

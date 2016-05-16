@@ -22,6 +22,8 @@ public class TestCases_ddi_firefox extends Settings
     @Test(priority = 0)
     public void company_links_verify_present(){Company.company_links_present();}
     @Test(priority = 0)
+    public void change_tabs_how_we_work(){How_We_Work.change_tabs();}
+    @Test(priority = 0)
     public void hww_links_verify_present(){How_We_Work.how_we_work_present();}
     @Test(priority = 0)
     public void how_we_work_links_verify_present(){}

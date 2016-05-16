@@ -1,11 +1,8 @@
 package Pages;
-
 import Elements.Button;
 import Enums.Variables;
-import com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import static org.testng.Assert.assertTrue;
 
 public class How_We_Work extends MainSettings.Settings

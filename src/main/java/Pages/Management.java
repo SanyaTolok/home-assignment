@@ -1,5 +1,4 @@
 package Pages;
-
 import Elements.Button;
 import Enums.Variables;
 import MainSettings.Settings;
@@ -8,10 +7,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
 import java.util.Iterator;
 import java.util.Set;
-
 public class Management extends Settings
 {
 

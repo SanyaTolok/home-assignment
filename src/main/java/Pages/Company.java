@@ -1,7 +1,5 @@
 package Pages;
-
 import Elements.Button;
-
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.By;

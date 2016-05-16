@@ -3,11 +3,9 @@ import Elements.Button;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 public class Blog extends Settings {

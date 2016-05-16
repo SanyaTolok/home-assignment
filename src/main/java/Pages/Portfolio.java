@@ -1,19 +1,13 @@
 package Pages;
-
 import Elements.Button;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
-import static Enums.Variables.PORTFOLIO_ARTICLE;
-import static Enums.Variables.SEND_SERVICES_FORM;
 
 public class Portfolio extends Settings{
     private static Button get_more=new Button(By.xpath(Variables.GET_MORE_BUTTON.toString()));

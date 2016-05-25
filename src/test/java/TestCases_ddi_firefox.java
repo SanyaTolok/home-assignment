@@ -62,7 +62,7 @@ public class TestCases_ddi_firefox extends Settings
     @Test(priority = 1)
     public void technology_link_present() {HomePage.technology_link_present();}
     @Test(priority = 1)
-    public void get_subscription_cookie() {Technology.get_coockie();}
+    public void get_subscription_cookie() {Technology.get_cookies();}
     @Test(priority = 0)
     public void remove_comment_blog() {Blog.remove_comment();}
 }

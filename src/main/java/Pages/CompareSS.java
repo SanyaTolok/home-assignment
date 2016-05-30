@@ -2,12 +2,7 @@ package Pages;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.PixelGrabber;
-import java.io.File;
 import MainSettings.Settings;
-import ext.test4j.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
 
 public class CompareSS extends Settings{
         public enum Result { Matched, SizeMismatch, PixelMismatch };

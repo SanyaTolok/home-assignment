@@ -2,21 +2,23 @@ package MainSettings;
 import Pages.HomePage;
 import TrackReporting.CaptureScreenShotOnFailureListener;
 import TrackReporting.LoggingEventListener;
-import com.thoughtworks.selenium.DefaultSelenium;
-import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+
+import java.awt.image.BufferedImage;
 
 @Listeners(CaptureScreenShotOnFailureListener.class)
 public class Settings {
     protected static WebDriver driver;
     protected String baseURL = "http://ddi-dev.com";
     private static final WebDriverEventListener eventListener = new LoggingEventListener();
+    public StringBuffer verificationErrors = new StringBuffer();
     protected HomePage mainPage;
 
     @BeforeMethod
@@ -29,9 +31,13 @@ public class Settings {
     }
 
     @AfterMethod
-    public void tearDown()
-    {
+    public void tearDown() throws Exception {
+        //Закрываем браузер
         driver.quit();
+        String verificationErrorString = verificationErrors.toString();
+        if (!"".equals(verificationErrorString)) {
+            Assert.fail(verificationErrorString);
+        }
     }
 
     public static WebDriver getDriver()

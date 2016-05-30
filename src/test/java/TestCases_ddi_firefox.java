@@ -1,9 +1,26 @@
 import MainSettings.Settings;
 import Pages.*;
+import ext.test4j.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.File;
 
 public class TestCases_ddi_firefox extends Settings
 {   @Test(priority = 0)
+    public void imageCompareTest() throws Exception {
+    String scrFile = "FILE_PATH";
+    String baseScrFile = "BASE_FILE_PATH";
+    File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(screenshotFile, new File(scrFile));
+    try {Assert.assertEquals(CompareUtil.Result.Matched, CompareUtil.CompareImage(baseScrFile, scrFile));
+    } catch (VerifyError e) {
+        verificationErrors.append(e.toString());
+    }
+    }
+    @Test(priority = 0)
     public void verify_links_management_CEO() {Management.verify_links_CEO();}
     @Test(priority = 0)
     public void verify_links_bdm_Europa(){Management.verify_links_bdm_Europa();}

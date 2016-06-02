@@ -5,7 +5,10 @@ import java.awt.image.PixelGrabber;
 import MainSettings.Settings;
 
 public class CompareSS extends Settings{
-        public enum Result { Matched, SizeMismatch, PixelMismatch };
+        public enum Result
+        {
+            Matched, SizeMismatch, PixelMismatch
+        };
         static Result CompareImage(String baseFile, String actualFile) {
             Result compareResult = Result.PixelMismatch;
             Image baseImage = Toolkit.getDefaultToolkit().getImage(baseFile);

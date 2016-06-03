@@ -3,8 +3,6 @@ package Pages;
 import Elements.Button;
 import Enums.Variables;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Load_test
 {
@@ -18,8 +16,6 @@ public class Load_test
     public static void loadTest()
     {
         System.out.printf("%n[START] Thread Id : %s is started!",Thread.currentThread().getId());
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://ddi-dev.com");
         hww_link.click();
         business_model_dedicated_team.click();
         business_model_time_materials.click();
@@ -28,6 +24,5 @@ public class Load_test
         approaches_innovation_labs.click();
         approaches_off_the_group.click();
         System.out.printf("%n[END] Thread Id : %s",Thread.currentThread().getId());
-        driver.quit();
     }
 }

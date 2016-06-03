@@ -84,6 +84,6 @@ public class TestCases_ddi_firefox extends Settings
     public void get_subscription_cookie() {Technology.get_cookies();}
     @Test(priority = 0)
     public void remove_comment_blog() {Blog.remove_comment();}
-    @Test(invocationCount = 10, threadPoolSize = 5)
+    @Test(invocationCount = 2, threadPoolSize = 3)
     public void load_test(){Load_test.loadTest();}
 }

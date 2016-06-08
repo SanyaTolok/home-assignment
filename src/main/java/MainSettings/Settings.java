@@ -24,6 +24,7 @@ public class Settings {
     @BeforeMethod
     public void setUp()
     {
+
         driver = new EventFiringWebDriver(new FirefoxDriver()).register(eventListener);
         getDriver().get(baseURL);
         mainPage = new HomePage();
@@ -32,7 +33,6 @@ public class Settings {
 
     @AfterMethod
     public void tearDown() throws Exception {
-        //Закрываем браузер
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {

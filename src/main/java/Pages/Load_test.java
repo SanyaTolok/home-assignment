@@ -17,12 +17,6 @@ public class Load_test
     {
         System.out.printf("%n[START] Thread Id : %s is started!",Thread.currentThread().getId());
         hww_link.click();
-        business_model_dedicated_team.click();
-        business_model_time_materials.click();
-        business_model_fixed_time.click();
-        approaches_exhaustive_delivery.click();
-        approaches_innovation_labs.click();
-        approaches_off_the_group.click();
         System.out.printf("%n[END] Thread Id : %s",Thread.currentThread().getId());
     }
 }

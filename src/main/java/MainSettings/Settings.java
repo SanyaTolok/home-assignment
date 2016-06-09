@@ -26,7 +26,7 @@ public class Settings {
     public void setUp()
     {
 
-        driver = new EventFiringWebDriver(new PhantomJSDriver()).register(eventListener);
+        driver = new EventFiringWebDriver(new FirefoxDriver()).register(eventListener);
         getDriver().get(baseURL);
         mainPage = new HomePage();
         driver.manage().window().maximize();

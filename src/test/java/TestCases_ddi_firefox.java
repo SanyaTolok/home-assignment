@@ -3,11 +3,8 @@ import Pages.*;
 import ext.test4j.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Pages.CompareSS;
-
 import java.io.File;
 
 public class TestCases_ddi_firefox extends Settings

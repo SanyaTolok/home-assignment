@@ -151,9 +151,10 @@ public class Blog extends Settings {
         blog_link.click();
         article.waitForElementIsPresent();
         article.click();
-        Settings.waitInSeconds(14);
+        Settings.waitInSeconds(15);
         close_subscription_popup.click();
         driver.switchTo().frame("dsq-app2");
+        Settings.waitInSeconds(1);
         activate.click();
         start_discuss.waitForElementIsPresent();
         start_discuss.enterText("simple comment ddi-dev.test");

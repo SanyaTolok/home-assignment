@@ -33,8 +33,6 @@ public class TestCases_ddi extends Settings
     public void paging_portfolio() {Portfolio.paging_portfolio();}
     @Test(priority = 0)
     public void zoom_map_contact_us() {Contact_US.zoom_in_and_zoom_out_map();    }
-    @Test(priority = 0,invocationCount=1)
-    public void add_discuss_comment() {Blog.discuss_add_comment();}
     @Test(priority = 0)
     public void company_links_verify_present(){Company.company_links_present();}
     @Test(priority = 0)
@@ -79,6 +77,8 @@ public class TestCases_ddi extends Settings
     public void technology_link_present() {HomePage.technology_link_present();}
     @Test(priority = 1)
     public void get_subscription_cookie() {Technology.get_cookies();}
+    @Test(priority = 0,invocationCount=1)
+    public void add_discuss_comment() {Blog.discuss_add_comment();}
     @Test(priority = 0)
     public void remove_comment_blog() {Blog.remove_comment();}
     @Test(invocationCount = 1, threadPoolSize = 1)

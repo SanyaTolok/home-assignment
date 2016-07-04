@@ -6,6 +6,7 @@ import MainSettings.Settings;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class Blog extends Settings {
@@ -185,29 +186,41 @@ public class Blog extends Settings {
         Settings.waitInSeconds(14);
         close_subscription_popup.click();
         driver.switchTo().frame("dsq-app2");
-        activate.click();
-        disqus_login.click();
-        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
-        String subWindowHandler = null;
-        Set<String> handles = driver.getWindowHandles(); // get all window handles
-        Iterator<String> iterator = handles.iterator();
-        while (iterator.hasNext()) {
-            subWindowHandler = iterator.next();
-        }
-        driver.switchTo().window(subWindowHandler); // switch to popup window
-        email.enterText("jasonbrienflocktoo@gmail.com");
-        pass.enterText("ddi-dev.tests");
-        login_button.click();
-        driver.switchTo().window(parentWindowHandler);
-        driver.switchTo().frame("dsq-app2");
+//        activate.click();
+//        disqus_login.click();
+//        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+//        String subWindowHandler = null;
+//        Set<String> handles = driver.getWindowHandles(); // get all window handles
+//        Iterator<String> iterator = handles.iterator();
+//        while (iterator.hasNext()) {
+//            subWindowHandler = iterator.next();
+//        }
+//        driver.switchTo().window(subWindowHandler); // switch to popup window
+//        email.enterText("jasonbrienflocktoo@gmail.com");
+//        pass.enterText("ddi-dev.tests");
+//        login_button.click();
+//        driver.switchTo().window(parentWindowHandler);
+//        driver.switchTo().frame("dsq-app2");
         try {
-            WebElement dropdown = driver.findElement(By.xpath(Variables.DROPDOWN.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
-            dropdown.click();
-             Button delete=new Button(By.xpath(Variables.DELETE.toString()));
-             delete.click();
-             driver.switchTo().alert().accept();
+            List<WebElement> posts= driver.findElements(By.cssSelector(".post-body"));
+            for(WebElement ourpost:posts)
+            {
+                String id;
+                id= ourpost.getAttribute("id");     // for getting id of each element
+                ourpost.getText();//for getting text of each element
+                if(ourpost.getText()=="simple comment ddi-dev.test")
+                {
+                    WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+id+"']/div[2]/ul/li[3]/a".toString()));
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+                    dropdown.click();
+                    Button delete=new Button(By.xpath(Variables.DELETE.toString()));
+                    delete.click();
+                    driver.switchTo().alert().accept();
+                }
+
             }
+
+        }
         catch (ElementNotVisibleException e)
             {
                 Assert.fail("post not removed");

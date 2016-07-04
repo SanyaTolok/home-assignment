@@ -4,16 +4,12 @@ import TrackReporting.CaptureScreenShotOnFailureListener;
 import TrackReporting.LoggingEventListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-
-import java.awt.image.BufferedImage;
 
 @Listeners(CaptureScreenShotOnFailureListener.class)
 public class Settings {
@@ -26,7 +22,6 @@ public class Settings {
     @BeforeMethod
     public void setUp()
     {
-
         driver = new EventFiringWebDriver(new ChromeDriver()).register(eventListener);
         getDriver().get(baseURL);
         mainPage = new HomePage();

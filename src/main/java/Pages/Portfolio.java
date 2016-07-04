@@ -29,6 +29,7 @@ public class Portfolio extends Settings{
     public static Portfolio get_more_info()
     {
         portfolio_link.click();
+        Settings.waitInSeconds(2);
         get_more.click();
         Settings.waitInSeconds(2);
         mobile.click();

@@ -93,9 +93,13 @@ public class HomePage extends Settings {
     {
         Settings.waitInSeconds(2);
         start_project.click();
+        name.isClickable();
         name.enterText("DDI DEV TEST START PROJECT");
+        email.isClickable();
         email.enterText("ddi-dev@test.com");
+        phone.isClickable();
         phone.enterText("17183559302");
+        message.isClickable();
         message.enterText("short test message");
         send.click();
         return new HomePage();

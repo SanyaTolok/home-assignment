@@ -3,6 +3,8 @@ package Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.w3c.dom.Document;
+
 import java.util.NoSuchElementException;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static MainSettings.Settings.getDriver;
@@ -11,6 +13,7 @@ import static MainSettings.Settings.waitInSeconds;
 public class Element
 {
     protected By by;
+
     public Element (By by)
     {
         this.by = by;
@@ -64,5 +67,8 @@ public class Element
         }
     }
 
-
+    public short getAttribute(String id) {
+        id= String.valueOf(Document.ATTRIBUTE_NODE);
+        return Short.parseShort(id);
+    }
 }

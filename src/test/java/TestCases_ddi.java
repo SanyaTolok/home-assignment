@@ -79,8 +79,6 @@ public class TestCases_ddi extends Settings
     public void get_subscription_cookie() {Technology.get_cookies();}
     @Test(priority = 0,invocationCount=1)
     public void add_discuss_comment() {Blog.discuss_add_comment();}
-    @Test(priority = 0)
-    public void remove_comment_blog() {Blog.remove_comment();}
     @Test(invocationCount = 1, threadPoolSize = 1)
     public void load_test(){Load_test.loadTest();}
 }

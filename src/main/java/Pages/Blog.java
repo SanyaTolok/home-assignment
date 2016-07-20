@@ -1,9 +1,11 @@
 package Pages;
 import Elements.Button;
+import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.*;
+import org.openqa.selenium.internal.FindsByTagName;
 import org.testng.Assert;
 
 import java.io.Console;
@@ -172,6 +174,7 @@ public class Blog extends Settings {
             subWindowHandler = iterator.next();
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
+        Settings.waitInSeconds(2);
         email.enterText("jasonbrienflocktoo@gmail.com");
         pass.enterText("ddi-dev.tests");
         login_button.click();
@@ -180,39 +183,17 @@ public class Blog extends Settings {
         start_discuss.waitForElementIsPresent();
         start_discuss.enterText("simple comment ddi-dev.test");
         post.click();
+        String text = "simple comment ddi-dev.test";
+        Element posts = new Element(By.linkText(text));
+        String id = String.valueOf(posts.getAttribute("id"));
+        System.out.print(id);
+        Settings.waitInSeconds(4);
+        WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+ id +"']/div[2]/ul/li[3]/a".toString()));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+        dropdown.click();
+        Button delete=new Button(By.xpath(Variables.DELETE.toString()));
+        delete.click();
+        driver.switchTo().alert().accept();
         return new Blog();
     }
-    public static Blog remove_comment() {
-        blog_link.click();
-        article.waitForElementIsPresent();
-        article.click();
-        Settings.waitInSeconds(14);
-        close_subscription_popup.click();
-        driver.switchTo().frame("dsq-app2");
-            List<WebElement> posts= driver.findElements(By.cssSelector(".post-body"));
-            for(WebElement ourpost:posts)
-            {
-                String id;
-                id= ourpost.getAttribute("id");     // for getting id of each element
-                System.out.print(id);
-                String text;
-               text=ourpost.getText();//for getting text of each element
-                System.out.print(text);
-               if(text=="simple comment ddi-dev.test")
-                {
-                    WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+id+"']/div[2]/ul/li[3]/a".toString()));
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
-                    dropdown.click();
-                    Button delete=new Button(By.xpath(Variables.DELETE.toString()));
-                    delete.click();
-                    driver.switchTo().alert().accept();
-                }
-               else
-                {
-                   Assert.fail("post not removed");
-               }
-
-            }
-        return new Blog();
-    }
-}
+  }

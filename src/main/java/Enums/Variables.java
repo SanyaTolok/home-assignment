@@ -82,7 +82,7 @@ public enum Variables
     PROGRAMMING_TAB("html/body/div[2]/div/div/ul/li[5]/a"),
     MARKETING_TAB("html/body/div[2]/div/div/ul/li[6]/a"),
     CLOUD_TECHNOLOGY_TAB("html/body/div[2]/div/div/ul/li[7]/a"),
-    //DROPDOWN("//ul[@class='post-menu dropdown']"),
+    DROPDOWN("//ul[@class='post-menu dropdown']"),
     DELETE("//li[@data-action='delete']"),
     LIST_OF_POSTS(".//*[@id='posts']"),
     ARTICLE_LINK("html/body/div[3]/div[1]/div[2]/div[5]/div[3]/a[2]"),

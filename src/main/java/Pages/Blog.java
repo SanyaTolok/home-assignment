@@ -40,6 +40,7 @@ public class Blog extends Settings {
     private static Button tab_case=new Button(By.xpath(Variables.CASE_TAB.toString()));
     private static Button tab_programming=new Button(By.xpath(Variables.PROGRAMMING_TAB.toString()));
     private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
+    private static Button cancel_google=new Button(By.xpath(Variables.CANCEL_GOOGLE_BUTTON.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -80,6 +81,35 @@ public class Blog extends Settings {
               {
                               cancel_facebook.click();
               }
+        else
+        {
+            Assert.fail("Test failed");
+        }
+
+        driver.switchTo().window(parentWindowHandler);  // switch back to parent window
+        return new Blog();
+    }
+    public static Blog share_google()
+    {
+        blog_link.click();
+        article.waitForElementIsPresent();
+        article.click();
+        share_google.waitForElementIsPresent();
+        share_google.click();
+        String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
+        String subWindowHandler = null;
+        Set<String> handles = driver.getWindowHandles(); // get all window handles
+        Iterator<String> iterator = handles.iterator();
+        while(iterator.hasNext())
+        {
+            subWindowHandler = iterator.next();
+        }
+        driver.switchTo().window(subWindowHandler); // switch to popup window
+        String url = driver.getCurrentUrl();// get popup url
+        if(url.contains("https://plus.google.com/share?"))
+        {
+            cancel_google.click();
+        }
         else
         {
             Assert.fail("Test failed");

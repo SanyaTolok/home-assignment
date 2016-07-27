@@ -99,6 +99,7 @@ public enum Variables
     LOGIN_DISQUS(".//*[@id='auth-form-button']"),
     POST_COMMENT_BUTTON(".//*[@id='form']/form/div/div[3]/div[5]/div/section/div/button"),
     ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span"),
+    CANCEL_GOOGLE_BUTTON("html/body/div[1]/div[2]/div[2]/table/tbody/tr/td[1]/div[2]"),
     //How we work
     TIME_MATERIALS(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[3]/a"),
     FIXED_PRICE(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[1]/a"),

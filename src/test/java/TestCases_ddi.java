@@ -56,6 +56,8 @@ public class TestCases_ddi extends Settings
     @Test(priority = 0)
     public void share_blog_facebook() {Blog.share_facebook();}
     @Test(priority = 0)
+    public void share_blog_google() {Blog.share_google();}
+    @Test(priority = 0)
     public void share_blog_tweet() { Blog.share_tweet();}
     @Test(priority = 0)
     public void share_blog_linked_in()  {Blog.share_linked_in();}

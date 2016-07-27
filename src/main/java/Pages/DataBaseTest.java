@@ -7,12 +7,14 @@ import java.sql.Statement;
 
 public class DataBaseTest
 {
-    private static String userName; private static String password; private static String dbURL; private static Connection connection; public static void main(String[] args)
+    private static String userName; private static String password; private static String dbURL; private static Connection connection;
+    public static void main(String[] args)
 {
     try
-{ userName = "username"; password = "password"; dbURL = "jdbc:mysql://artoftesting.com/testDB"; try {
+{      userName = "sanya_tolok@localhost"; password = ""; dbURL = "jdbc:mysql:https://www.zzz.com.ua/mysql/ru"; try {
     Class.forName("com.mysql.jdbc.Driver"); } catch (ClassNotFoundException e) { System.out.println("MySQL JDBC driver not found."); e.printStackTrace();
-} try
+}
+    try
 {
     connection = DriverManager.getConnection(dbURL, userName, password);
     Statement st = connection.createStatement();
@@ -24,4 +26,7 @@ catch (SQLException e) { System.out.println("Connection to MySQL db failed");
     e.printStackTrace();
 }
 }
-    catch (Exception e) { e.printStackTrace(); } } }
+    catch (Exception e) { e.printStackTrace();
+    }
+}
+}

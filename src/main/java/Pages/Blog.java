@@ -108,7 +108,7 @@ public class Blog extends Settings {
         String url = driver.getCurrentUrl();// get popup url
         if(url.contains("https://plus.google.com/share?"))
         {
-            cancel_google.click();
+           driver.close();
         }
         else
         {

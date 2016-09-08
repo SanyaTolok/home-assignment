@@ -91,8 +91,9 @@ public class HomePage extends Settings {
     }
     public static HomePage send_request()
     {
-        Settings.waitInSeconds(2);
+        Settings.waitInSeconds(3);
         start_project.click();
+        Settings.waitInSeconds(2);
         name.isClickable();
         name.enterText("DDI DEV TEST START PROJECT");
         email.isClickable();

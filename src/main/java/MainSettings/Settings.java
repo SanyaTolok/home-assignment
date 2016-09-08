@@ -1,10 +1,10 @@
 package MainSettings;
+
 import Pages.HomePage;
 import TrackReporting.CaptureScreenShotOnFailureListener;
 import TrackReporting.LoggingEventListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -22,7 +22,7 @@ public class Settings {
     @BeforeMethod
     public void setUp()
     {
-        driver = new EventFiringWebDriver(new ChromeDriver()).register(eventListener);
+        driver = new ChromeDriver();
         getDriver().get(baseURL);
         mainPage = new HomePage();
         driver.manage().window().maximize();

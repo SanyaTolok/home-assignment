@@ -1,24 +1,9 @@
 import MainSettings.Settings;
 import Pages.*;
-import ext.test4j.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.io.File;
 
 public class TestCases_ddi extends Settings
-{   @Test(priority = 0)
-    public void imageCompareTest() throws Exception {
-    String scrFile = "\\home\\ddidev\\Downloads\\ddi_tests\\";
-    String baseScrFile = "\\home\\ddidev\\Downloads\\ddi_tests\\ddi_tests";
-    File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-    FileUtils.copyFile(screenshotFile, new File(scrFile));
-    try {Assert.assertEquals(CompareUtil.Result.SizeMismatch, CompareUtil.CompareImage(baseScrFile, scrFile));
-    } catch (VerifyError e) {
-        verificationErrors.append(e.toString());
-    }
-    }
+{
     @Test(priority = 0)
     public void verify_links_management_CEO() {Management.verify_links_CEO();}
     @Test(priority = 0)

@@ -10,12 +10,12 @@ public class LoggingEventListener implements WebDriverEventListener {
     private By lastFindBy;
     private String originalValue;
 
-    @Override
+    //@Override
     public void beforeNavigateTo(String url, WebDriver driver) {
         log.info("Navigating to:'" + url + "'");
     }
 
-    @Override
+   //@Override
     public void beforeChangeValueOf(WebElement element, WebDriver driver) {
         originalValue = element.getAttribute("value");
         if (originalValue == null){
@@ -23,7 +23,7 @@ public class LoggingEventListener implements WebDriverEventListener {
         }
     }
 
-    @Override
+    //@Override
     public void afterChangeValueOf(WebElement element, WebDriver driver) {
         String newValue = element.getAttribute("value");
         if (newValue == null){
@@ -32,12 +32,12 @@ public class LoggingEventListener implements WebDriverEventListener {
         log.info("Changing value in element found " + lastFindBy + " from '" + originalValue + "' to '" + newValue + "'");
     }
 
-    @Override
+    //@Override
     public void beforeFindBy(By by, WebElement element, WebDriver driver) {
         lastFindBy = by;
     }
 
-    @Override
+    //@Override
     public void onException(Throwable error, WebDriver driver) {
         if (error.getClass().equals(NoSuchElementException.class)) {
             log.error("WebDriver error: Element not found " + lastFindBy);
@@ -48,55 +48,71 @@ public class LoggingEventListener implements WebDriverEventListener {
         }
     }
 
-    @Override
+ //   @Override
     public void afterClickOn(WebElement element, WebDriver driver) {
         log.info("- - Ok! Element, found " + lastFindBy + " clicked successfully");
     }
 
-    @Override
+    public void beforeChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
+
+    }
+
+    public void afterChangeValueOf(WebElement webElement, WebDriver webDriver, CharSequence[] charSequences) {
+
+    }
+
+   // @Override
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
 
     }
 
-    @Override
+   /// @Override
     public void afterNavigateBack(WebDriver driver) {
         log.info("Opened page from history: '" + driver.getCurrentUrl() + "'");
     }
 
-    @Override
+  ///  @Override
     public void afterNavigateForward(WebDriver driver) {
         log.info("Opened page from history: '" + driver.getCurrentUrl() + "'");
     }
 
-    @Override
+    public void beforeNavigateRefresh(WebDriver webDriver) {
+
+    }
+
+    public void afterNavigateRefresh(WebDriver webDriver) {
+
+    }
+
+   //@Override
     public void afterNavigateTo(String url, WebDriver driver) {
 
     }
 
-    @Override
+   // @Override
     public void afterScript(String url, WebDriver driver) {
 
     }
 
 
-    @Override
+  //  @Override
     public void beforeClickOn(WebElement element, WebDriver driver) {
         log.info("Clicking on " + lastFindBy);
     }
 
 
-    @Override
+   // @Override
     public void beforeNavigateBack(WebDriver driver) {
         log.info("Navigating back");
     }
-
-    @Override
+//
+   // @Override
     public void beforeNavigateForward(WebDriver driver) {
         log.info("Navigating forward");
     }
 
 
-    @Override
+  //  @Override
     public void beforeScript(String script, WebDriver driver)
     {
         log.info("Executing script: '" + script + "' with element, found " + lastFindBy);

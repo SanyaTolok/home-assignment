@@ -62,7 +62,7 @@ public enum Variables
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),
     START_PROJECT_PHONE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[4]/input"),
     START_PROJECT_MESSAGE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[5]/textarea"),
-    START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[6]/input"),
+    START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[6]/div[2]/input"),
     START_PROJECT_CLOSE(".//*[@id='requestFormModal']/div/div/div[1]/button"),
     //Contact Us form
     NAME_INPUT(".//*[@id='contact-form']/div/input[1]"),

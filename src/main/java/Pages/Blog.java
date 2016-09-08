@@ -1,16 +1,19 @@
 package Pages;
+
 import Elements.Button;
 import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import org.openqa.selenium.*;
-import org.openqa.selenium.internal.FindsByTagName;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-import java.io.Console;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 
 public class Blog extends Settings {
@@ -188,7 +191,7 @@ public class Blog extends Settings {
         article.click();
         Settings.waitInSeconds(15);
         close_subscription_popup.click();
-        driver.switchTo().frame("dsq-app2");
+        driver.switchTo().frame("dsq-app1");
         Settings.waitInSeconds(1);
         activate.click();
         start_discuss.waitForElementIsPresent();
@@ -206,7 +209,9 @@ public class Blog extends Settings {
         driver.switchTo().window(subWindowHandler); // switch to popup window
         Settings.waitInSeconds(2);
         email.enterText("jasonbrienflocktoo@gmail.com");
-        pass.enterText("ddi-dev.tests");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+        pass.enterText("ddi-dev.tests"+ dateFormat.format(cal.getTime()));
         login_button.click();
         driver.switchTo().window(parentWindowHandler);
         driver.switchTo().frame("dsq-app2");

@@ -15,21 +15,12 @@ public class Management extends Settings
     private static Button bdm_america_linked_in=new Button(By.xpath(Variables.BDM_AMERICA_LINKED_IN.toString()));
     private static Button hmd_linked_in=new Button(By.xpath(Variables.HMD_LINKED_IN.toString()));
     private static Button pr_linked_in=new Button(By.xpath(Variables.PR_LINKED_IN.toString()));
-    private static Button company_link=new Button(By.xpath(Variables.COMPANY_LINK.toString()));
-    private static Button open_menu=new Button(By.xpath(Variables.OPEN_MENU.toString()));
-    private static Button management_link=new Button(By.xpath(Variables.MANAGMENT_LINK.toString()));
+
     public static Management verify_links_CEO()
     {
-        try {
-            WebElement send_hover = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
-            Settings.waitInSeconds(2);
-            management_link.click();
-        }
-        catch (ElementNotVisibleException e)
-        {
-            Assert.fail("menu unavailable");
-        }
+        Actions action = new Actions(driver);
+        WebElement management = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
+        action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.MANAGMENT_LINK.toString()))).click().build().perform();
         WebElement ceo_facebook = driver.findElement(By.xpath(Variables.CEO_FACEBOOK.toString()));
         Actions newwin = new Actions(driver);
         newwin.keyDown(Keys.SHIFT).click(ceo_facebook).keyUp(Keys.SHIFT).build().perform();
@@ -69,16 +60,9 @@ public class Management extends Settings
     }
     public static Management verify_links_bdm_Europa()
     {
-        try {
-            WebElement send_hover = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
-            Settings.waitInSeconds(2);
-            management_link.click();
-        }
-        catch (ElementNotVisibleException e)
-        {
-            Assert.fail("menu unavailable");
-        }
+        Actions action = new Actions(driver);
+        WebElement management = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
+        action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.MANAGMENT_LINK.toString()))).click().build().perform();
         WebElement bdm_facebook = driver.findElement(By.xpath(Variables.BDM_EUROPA_FACEBOOK.toString()));
         Actions newwin = new Actions(driver);
         newwin.keyDown(Keys.SHIFT).click(bdm_facebook).keyUp(Keys.SHIFT).build().perform();
@@ -120,16 +104,9 @@ public class Management extends Settings
     }
     public static Management verify_links_bdm_America()
     {
-        try {
-            WebElement send_hover = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
-            Settings.waitInSeconds(2);
-            management_link.click();
-        }
-        catch (ElementNotVisibleException e)
-        {
-            Assert.fail("menu unavailable");
-        }
+        Actions action = new Actions(driver);
+        WebElement management = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
+        action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.MANAGMENT_LINK.toString()))).click().build().perform();
         WebElement bdm_america_facebook = driver.findElement(By.xpath(Variables.BDM_AMERICA_FACEBOOK.toString()));
         Actions newwin3 = new Actions(driver);
         newwin3.keyDown(Keys.SHIFT).click(bdm_america_facebook).keyUp(Keys.SHIFT).build().perform();
@@ -172,16 +149,9 @@ public class Management extends Settings
 
     public static Management verify_links_head_marketing_department()
     {
-        try {
-            WebElement send_hover = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
-            Settings.waitInSeconds(2);
-            management_link.click();
-        }
-        catch (ElementNotVisibleException e)
-        {
-            Assert.fail("menu unavailable");
-        }
+        Actions action = new Actions(driver);
+        WebElement management = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
+        action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.MANAGMENT_LINK.toString()))).click().build().perform();
         WebElement head_facebook = driver.findElement(By.xpath(Variables.HMD_FACEBOOK.toString()));
         Actions newwin = new Actions(driver);
         newwin.keyDown(Keys.SHIFT).click(head_facebook).keyUp(Keys.SHIFT).build().perform();
@@ -223,16 +193,9 @@ public class Management extends Settings
     }
     public static Management verify_links_pr_manager()
     {
-        try {
-            WebElement send_hover = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
-            Settings.waitInSeconds(2);
-            management_link.click();
-        }
-        catch (ElementNotVisibleException e)
-        {
-            Assert.fail("menu unavailable");
-        }
+        Actions action = new Actions(driver);
+        WebElement management = driver.findElement(By.xpath(Variables.COMPANY_LINK.toString()));
+        action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.MANAGMENT_LINK.toString()))).click().build().perform();
         WebElement pr_facebook = driver.findElement(By.xpath(Variables.PR_FACEBOOK.toString()));
         Actions newwin = new Actions(driver);
         newwin.keyDown(Keys.SHIFT).click(pr_facebook).keyUp(Keys.SHIFT).build().perform();

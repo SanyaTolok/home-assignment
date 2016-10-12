@@ -37,7 +37,7 @@ public class Contact_US extends Settings
         Settings.waitInSeconds(2);
         change_to_usa_location.click();
         driver.switchTo().frame("usa-map");
-        Settings.waitInSeconds(3);
+        Settings.waitInSeconds(5);
         zoom_in.click();
         zoom_in.click();
         zoom_out.click();

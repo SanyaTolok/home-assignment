@@ -11,7 +11,6 @@ import org.testng.Assert;
 
 import static Enums.Variables.SEND_SERVICES_FORM;
 public class Services extends Settings {
-    private static Button services_link = new Button(By.xpath(Variables.OPEN_MENU_SERVISES.toString()));
     private static Button contact_us= new Button(By.xpath(Variables.CONTACTS_LINK.toString()));
     private static Button send=new Button(By.xpath(SEND_SERVICES_FORM.toString()));
     private static TextField name = new TextField(By.xpath(Variables.NAME_SERVICES_FORM.toString()));
@@ -23,10 +22,17 @@ public class Services extends Settings {
     public static Services get_request_from_services_page()
     {
         contact_us.click();
-        services_link.click();
-        Settings.waitInSeconds(2);
-        custom.click();
-        Settings.waitInSeconds(15);
+        try {
+            WebElement send_hover = driver.findElement(By.xpath(Variables.OPEN_MENU_SERVICES.toString()));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", send_hover);
+            Settings.waitInSeconds(2);
+            custom.click();
+        }
+        catch (ElementNotVisibleException e)
+        {
+            Assert.fail("menu unavailable");
+        }
+        Settings.waitInSeconds(13);
         close_subscription_popup.click();
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0,3500);");//Scroll down

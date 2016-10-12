@@ -5,6 +5,7 @@ import MainSettings.Settings;
 import org.openqa.selenium.By;
 
 public class Portfolio extends Settings{
+    private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
     private static Button portfolio_link= new Button(By.xpath(Variables.PORTFOLIO_LINK.toString()));
     private static Button web_tab=new Button(By.xpath(Variables.WEB_DEVELOPMENT_TAB.toString()));
     private static Button mobile_tab=new Button(By.xpath(Variables.MOBILE_DEVELOPMENT_TAB.toString()));
@@ -14,11 +15,12 @@ public class Portfolio extends Settings{
     public static Portfolio tabs_exist_and_works()
     {
         portfolio_link.click();
-        Settings.waitInSeconds(3);
+        Settings.waitInSeconds(2);
         web_tab.click();
         Settings.waitInSeconds(3);
         mobile_tab.click();
-        Settings.waitInSeconds(3);
+        Settings.waitInSeconds(10);
+        close_subscription_popup.click();
         eterprice_tab.click();
         Settings.waitInSeconds(3);
         cloud_tab.click();

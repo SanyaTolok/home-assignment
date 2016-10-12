@@ -40,16 +40,14 @@ public enum Variables
     PR_LINKED_IN("html/body/div[3]/div/article/div[7]/div/a[2]/img"),
     //Portfolio
     WEB_DEVELOPMENT_TAB(".//*[@id='main']/div[1]/nav/li[2]/a"),
-    MOBILE_DEVELOPMENT_TAB(".//*[@id='portfolio']/ul[1]/li[3]/a"),
-    CLOUD_SOLUTION_TAB(".//*[@id='portfolio']/ul[1]/li[4]/a"),
-    ENTERPRICE_SOFTWARE_TAB(".//*[@id='portfolio']/ul[1]/li[5]/a"),
+    MOBILE_DEVELOPMENT_TAB(".//*[@id='main']/div[1]/nav/li[3]/a"),
+    CLOUD_SOLUTION_TAB(".//*[@id='main']/div[1]/nav/li[4]/a"),
+    ENTERPRICE_SOFTWARE_TAB(".//*[@id='main']/div[1]/nav/li[5]/a"),
     TAB_ALL(".//*[@id='main']/div[1]/nav/li[1]/a"),
     PREVIOUS_PAGE(".//*[@id='paginator']/ul/li[1]/a"),
     NEXT_PAGE(".//*[@id='paginator']/ul/li[7]/a"),
     SECOND_PAGE(".//*[@id='paginator']/ul/li[3]/a"),
-    PORTFOLIO_ARTICLE("//h2[@class='p-title-20-regular' and contains(text(),'Pay Today')]"),
-    NEXT_PAGE_PORTFOLIO("html/body/div[2]/div/div/div/div/div[3]/a"),
-    PREVIOUS_PAGE_PORTFOLIO("html/body/div[2]/div/div/div/div/div[3]/a"),
+
     //Start project form1
     START_PROJECT_NAME(".//*[@id='requestFormModal']/div/div/div[2]/form/div[2]/input"),
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),

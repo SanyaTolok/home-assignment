@@ -28,7 +28,6 @@ public class TestCases_ddi extends Settings
     public void test_paging_blog() {Blog.test_paging(); }
     @Test(priority = 0)
     public void portfolio_tabs_exist_and_works() { Portfolio.tabs_exist_and_works();    }
-
     @Test(priority = 0)
     public void send_request() {   HomePage.send_request();    }
     @Test(priority = 0)

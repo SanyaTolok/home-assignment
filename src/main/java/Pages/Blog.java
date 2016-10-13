@@ -40,7 +40,6 @@ public class Blog extends Settings {
     private static Button tab_case=new Button(By.xpath(Variables.CASE_TAB.toString()));
     private static Button tab_programming=new Button(By.xpath(Variables.PROGRAMMING_TAB.toString()));
     private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
-    private static Button cancel_google=new Button(By.xpath(Variables.CANCEL_GOOGLE_BUTTON.toString()));
     public static Blog all_tabs_exsist()
     {
         blog_link.click();
@@ -220,7 +219,6 @@ public class Blog extends Settings {
 //        String text = "simple comment ddi-dev.test";
 //        Element posts = new Element(By.linkText(text));
 //        String id = String.valueOf(posts.getAttribute("id"));
-//        System.out.print(id);
 //        Settings.waitInSeconds(4);
 //        WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+ id +"']/div[2]/ul/li[3]/a".toString()));
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);

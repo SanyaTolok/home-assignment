@@ -1,13 +1,10 @@
 package Pages;
 
 import Elements.Button;
-import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.text.DateFormat;
@@ -208,27 +205,29 @@ public class Blog extends Settings {
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
         Settings.waitInSeconds(2);
+        email.isClickable();
         email.enterText("jasonbrienflocktoo@gmail.com");
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Calendar cal = Calendar.getInstance();
-        pass.enterText("ddi-dev.tests"+ dateFormat.format(cal.getTime()));
+        pass.isClickable();
+        pass.enterText("ddi-dev.tests");
         login_button.click();
         driver.switchTo().window(parentWindowHandler);
-        driver.switchTo().frame("dsq-app2");
+        driver.switchTo().frame("dsq-app1");
         start_discuss.waitForElementIsPresent();
-        start_discuss.enterText("simple comment ddi-dev.test");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar cal = Calendar.getInstance();
+        start_discuss.enterText("simple comment ddi-dev.test"+ dateFormat.format(cal.getTime()));
         post.click();
-        String text = "simple comment ddi-dev.test";
-        Element posts = new Element(By.linkText(text));
-        String id = String.valueOf(posts.getAttribute("id"));
-        System.out.print(id);
-        Settings.waitInSeconds(4);
-        WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+ id +"']/div[2]/ul/li[3]/a".toString()));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
-        dropdown.click();
-        Button delete=new Button(By.xpath(Variables.DELETE.toString()));
-        delete.click();
-        driver.switchTo().alert().accept();
+//        String text = "simple comment ddi-dev.test";
+//        Element posts = new Element(By.linkText(text));
+//        String id = String.valueOf(posts.getAttribute("id"));
+//        System.out.print(id);
+//        Settings.waitInSeconds(4);
+//        WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+ id +"']/div[2]/ul/li[3]/a".toString()));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
+//        dropdown.click();
+//        Button delete=new Button(By.xpath(Variables.DELETE.toString()));
+//        delete.click();
+//        driver.switchTo().alert().accept();
         return new Blog();
     }
   }

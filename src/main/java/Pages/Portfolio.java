@@ -19,7 +19,7 @@ public class Portfolio extends Settings{
         web_tab.click();
         Settings.waitInSeconds(3);
         mobile_tab.click();
-        Settings.waitInSeconds(10);
+        Settings.waitInSeconds(15);
         close_subscription_popup.click();
         eterprice_tab.click();
         Settings.waitInSeconds(3);

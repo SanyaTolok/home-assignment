@@ -16,11 +16,7 @@ public class Company extends Settings {
         company_link.click();
         String current_url= driver.getCurrentUrl();
         if(current_url.contains("http://ddi-dev.com/company/")) {
-            open_menu.click();
-            management_link.click();
-            Settings.waitInSeconds(2);
-            open_menu.click();
-            software_link.click();
+           System.out.print("link eqaul to http://ddi-dev.com/company/");
              }
             else
         {

@@ -51,11 +51,5 @@
             <ddi:version>RELEASE</ddi:version>
             <ddi:scope>runtime</ddi:scope>
         </ddi:dependency>
-        <ddi:dependency>
-            <ddi:groupId>commons-logging</ddi:groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-            <scope>compile</scope>
-        </ddi:dependency>
           </ddi:dependencies>
 </ddi:project>

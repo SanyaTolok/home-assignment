@@ -2,10 +2,8 @@ package MainSettings;
 
 import Pages.HomePage;
 import TrackReporting.CaptureScreenShotOnFailureListener;
-import TrackReporting.LoggingEventListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +13,7 @@ import org.testng.annotations.Listeners;
 public class Settings {
     protected static WebDriver driver;
     protected String baseURL = "http://ddi-dev.com";
-    private static final WebDriverEventListener eventListener = new LoggingEventListener();
+   // private static final WebDriverEventListener eventListener = new LoggingEventListener();
     public StringBuffer verificationErrors = new StringBuffer();
     protected HomePage mainPage;
 

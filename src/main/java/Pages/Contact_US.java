@@ -20,8 +20,7 @@ public class Contact_US extends Settings
     private static Button change_to_usa_location= new Button(By.xpath(Variables.CHANGE_TO_USA_LOCATION.toString()));
     public static Contact_US send_request() {
         contact_us.click();
-        Settings.waitInSeconds(12);
-        close_subscription_popup.click();
+        Settings.waitInSeconds(2);
         name.enterText("DDI TEST NAME");
         phone.enterText("17183559302");
         email.enterText("test@ddi-dev.com");

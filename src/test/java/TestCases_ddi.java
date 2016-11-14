@@ -9,8 +9,6 @@ public class TestCases_ddi extends Settings
     @Test(priority = 1, groups = "smoke")
     public void verify_links_bdm_Europa(){Management.verify_links_bdm_Europa();}
     @Test(priority = 1, groups = "smoke")
-    public void verify_links_bdm_America(){Management.verify_links_bdm_America();}
-    @Test(priority = 1, groups = "smoke")
     public void verify_links_head_marketing(){Management.verify_links_head_marketing_department();}
     @Test(priority = 1, groups = "smoke")
     public void verify_links_pr_manager(){Management.verify_links_pr_manager();}
@@ -59,9 +57,5 @@ public class TestCases_ddi extends Settings
     @Test(priority = 1, groups = "smoke")
     public void technology_link_present() {HomePage.technology_link_present();}
     @Test(priority = 1, groups = "smoke")
-    public void get_subscription_cookie() {Technology.get_cookies();}
-    @Test(priority = 1, groups = "smoke")
     public void add_discuss_comment() {Blog.discuss_add_comment();}
-    @Test(invocationCount = 2, threadPoolSize = 2)
-    public void load_test(){Load_test.loadTest();}
 }

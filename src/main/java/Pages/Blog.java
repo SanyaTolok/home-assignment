@@ -78,7 +78,7 @@ public class Blog extends Settings {
         String url = driver.getCurrentUrl();// get popup url
               if(url.contains("https://www.facebook.com/login.php"))
               {
-                              cancel_facebook.click();
+                              driver.close();
               }
         else
         {
@@ -185,8 +185,7 @@ public class Blog extends Settings {
         blog_link.click();
         article.waitForElementIsPresent();
         article.click();
-        Settings.waitInSeconds(15);
-        close_subscription_popup.click();
+        Settings.waitInSeconds(3);
         driver.switchTo().frame("dsq-app1");
         Settings.waitInSeconds(1);
         activate.click();

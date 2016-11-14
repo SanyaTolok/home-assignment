@@ -18,14 +18,12 @@ public class Services extends Settings {
     private static TextField email = new TextField(By.xpath(Variables.EMAIL_SERVICES_FORM.toString()));
     private static TextField phone = new TextField(By.xpath(Variables.PHONE_SERVICES_FORM.toString()));
     private static TextField description=new TextField(By.xpath(Variables.DESCRIPTION_SERVICES_FORM.toString()));
-    private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
     public static Services get_request_from_services_page()
     {
         Actions action = new Actions(driver);
         WebElement management = driver.findElement(By.xpath(Variables.SERVICES_LINK.toString()));
         action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.CUSTOM_SERVICES.toString()))).click().build().perform();
-        Settings.waitInSeconds(13);
-        close_subscription_popup.click();
+        Settings.waitInSeconds(3);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0,3500);");//Scroll down
         name.enterText("DDI TEST NAME");

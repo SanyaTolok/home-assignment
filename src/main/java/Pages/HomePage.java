@@ -107,6 +107,7 @@ public class HomePage extends Settings {
     }
     public static HomePage subscribe_email()
     {
+        Settings.waitInSeconds(2);
         subscribe.enterText("ddi-dev@test.com");
         sign_in.click();
         congrats.isPresent();

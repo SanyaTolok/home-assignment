@@ -63,7 +63,7 @@ public class HomePage extends Settings {
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(company_link != null, "Test case is FAILED - CCOMPANY LINK is ABSENT!!!");
+        assertTrue(company_link != null, "Test case is FAILED - COMPANY LINK is ABSENT!!!");
 
     }
 

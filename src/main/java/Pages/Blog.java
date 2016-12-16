@@ -16,13 +16,10 @@ import java.util.Set;
 public class Blog extends Settings {
     private static Button blog_link= new Button(By.xpath(Variables.BLOG_LINK.toString()));
     private static Button share_facebook= new Button(By.xpath(Variables.SHARE_FACEBOOK.toString()));
-    private static Button cancel_facebook= new Button(By.xpath(Variables.CANCEL_FACEBOOK.toString()));
-    private static Button article= new Button(By.xpath(Variables.ARTICLE_LINK.toString()));
+       private static Button article= new Button(By.xpath(Variables.ARTICLE_LINK.toString()));
     private static Button share_tweet= new Button(By.xpath(Variables.SHARE_TWEET.toString()));
     private static Button share_linkedin= new Button(By.xpath(Variables.SHARE_LINKED_IN.toString()));
     private static Button share_google= new Button(By.xpath(Variables.SHARE_GOOGLE.toString()));
-    private static Button share_email= new Button(By.xpath(Variables.SHARE_EMAIL.toString()));
-    private static Button close_subscription_popup= new Button(By.xpath(Variables.SUBSCRIPTION_POPUP.toString()));
     private static Button next_page=new Button(By.xpath(Variables.NEXT_PAGE.toString()));
     private static Button second_page=new Button(By.xpath(Variables.SECOND_PAGE.toString()));
     private static Button previous=new Button(By.xpath(Variables.PREVIOUS_PAGE.toString()));

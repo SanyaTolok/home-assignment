@@ -5,6 +5,8 @@ import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.text.DateFormat;
@@ -148,6 +150,7 @@ public class Blog extends Settings {
         article.click();
         share_linkedin.waitForElementIsPresent();
         share_linkedin.click();
+        waitInSeconds(4);
         String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles
@@ -212,16 +215,15 @@ public class Blog extends Settings {
         Calendar cal = Calendar.getInstance();
         start_discuss.enterText("simple comment ddi-dev.test"+ dateFormat.format(cal.getTime()));
         post.click();
-//        String text = "simple comment ddi-dev.test";
-//        Element posts = new Element(By.linkText(text));
-//        String id = String.valueOf(posts.getAttribute("id"));
-//        Settings.waitInSeconds(4);
-//        WebElement dropdown = driver.findElement(By.xpath(".//*[@id='"+ id +"']/div[2]/ul/li[3]/a".toString()));
-//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dropdown);
-//        dropdown.click();
-//        Button delete=new Button(By.xpath(Variables.DELETE.toString()));
-//        delete.click();
-//        driver.switchTo().alert().accept();
+        waitInSeconds(4);
+        WebElement dropdown = driver.findElement(By.xpath(".//*[contains(@id,'post')]/div[2]/ul/li[3]/a"));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(dropdown).click().build().perform();
+        WebElement delete = driver.findElement(By.xpath(".//*[contains(@id,'post')]/div[2]/ul/li[3]/ul/li[1]/a"));
+        delete.click();
+        waitInSeconds(3);
+        driver.switchTo().alert().accept();
+        waitInSeconds(3);
         return new Blog();
     }
   }

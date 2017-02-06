@@ -11,7 +11,7 @@ public class DataBaseTest
     public static void main(String[] args)
 {
     try
-{      userName = "sanya_tolok@localhost"; password = "401_sanya"; dbURL = "jdbc:mysql:https://www.zzz.com.ua/mysql/ru"; try {
+{      userName = "sanya_tolok@localhost"; password = ""; dbURL = "jdbc:mysql:https://www.zzz.com.ua/mysql/ru"; try {
     Class.forName("com.mysql.jdbc.Driver"); } catch (ClassNotFoundException e) { System.out.println("MySQL JDBC driver not found."); e.printStackTrace();
 }
     try

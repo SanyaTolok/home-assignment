@@ -23,7 +23,7 @@ public class Services extends Settings {
         Actions action = new Actions(driver);
         WebElement management = driver.findElement(By.xpath(Variables.SERVICES_LINK.toString()));
         action.moveToElement(management).moveToElement(driver.findElement(By.xpath(Variables.CUSTOM_SERVICES.toString()))).click().build().perform();
-        Settings.waitInSeconds(3);
+        Settings.waitInSeconds(5);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0,3500);");//Scroll down
         name.enterText("DDI TEST NAME");

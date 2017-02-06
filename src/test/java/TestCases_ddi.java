@@ -27,7 +27,7 @@ public class TestCases_ddi extends Settings
     @Test(priority = 1, groups = "smoke")
     public void portfolio_tabs_exist_and_works() { Portfolio.tabs_exist_and_works();    }
     @Test(priority = 1, groups = "smoke")
-    public void send_request() {   HomePage.send_request();    }
+    public void send_request_home_page() {   HomePage.send_request();    }
     @Test(priority = 1, groups = "smoke")
     public void verify_subscription() {HomePage.subscribe_email();}
     @Test(priority = 1, groups = "smoke")

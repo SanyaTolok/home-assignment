@@ -7,12 +7,15 @@ import MainSettings.Settings;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 import static org.testng.Assert.assertTrue;
 
 public class HomePage extends Settings {
 
     private static Button start_project=new Button((By.xpath(Variables.START_PROJECT.toString())));
-    private static Button close=new Button(By.xpath(Variables.START_PROJECT_CLOSE.toString()));
     private static Button send=new Button(By.xpath(Variables.START_PROJECT_SEND_BUTTON.toString()));
     private static TextField name=new TextField(By.xpath(Variables.START_PROJECT_NAME.toString()));
     private static TextField email=new TextField(By.xpath(Variables.START_PROJECT_EMAIL.toString()));
@@ -102,7 +105,16 @@ public class HomePage extends Settings {
         phone.enterText("17183559302");
         message.isClickable();
         message.enterText("short test message");
-        send.click();
+
+        try {
+            Robot robot = new Robot();
+            robot.mouseMove(784,689);
+            robot.mousePress(KeyEvent.BUTTON1_DOWN_MASK);
+            robot.mouseRelease(KeyEvent.BUTTON1_DOWN_MASK);
+            waitInSeconds(10);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
         return new HomePage();
     }
     public static HomePage subscribe_email()

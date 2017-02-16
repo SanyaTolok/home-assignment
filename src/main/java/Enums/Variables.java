@@ -51,8 +51,7 @@ public enum Variables
     START_PROJECT_EMAIL(".//*[@id='requestFormModal']/div/div/div[2]/form/div[3]/input"),
     START_PROJECT_PHONE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[4]/input"),
     START_PROJECT_MESSAGE(".//*[@id='requestFormModal']/div/div/div[2]/form/div[5]/textarea"),
-    START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[6]/div[2]/input"),
-    START_PROJECT_CLOSE(".//*[@id='requestFormModal']/div/div/div[1]/button"),
+    START_PROJECT_SEND_BUTTON(".//*[@id='requestFormModal']/div/div/div[2]/form/div[7]/div[2]/input"),
     //Contact Us form
     NAME_INPUT(".//*[@id='contact-form']/div/input[1]"),
     EMAIL_INPUT(".//*[@id='contact-form']/div/input[2]"),
@@ -96,7 +95,7 @@ public enum Variables
     EXHAUSTIVE_DELIVERY(".//*[@id='main']/section[6]/div/div[1]/div[3]/a"),
     OFF_THE_GROUP(".//*[@id='main']/section[6]/div/div[1]/div[1]/a");
     private String text;
-    private Variables(String text)
+    Variables(String text)
     {
         this.text=text;
     }

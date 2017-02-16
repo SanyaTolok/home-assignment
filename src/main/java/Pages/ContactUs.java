@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class Contact_US extends Settings
+public class ContactUs extends Settings
 {
     private static Button contact_us= new Button(By.xpath(Variables.CONTACTS_LINK.toString()));
     private static TextField email=new TextField(By.xpath(Variables.EMAIL_INPUT.toString()));
@@ -20,7 +20,7 @@ public class Contact_US extends Settings
     private static Button zoom_in=new Button(By.xpath(Variables.ZOOM_IN.toString()));
     private static Button zoom_out=new Button(By.xpath(Variables.ZOOM_OUT.toString()));
     private static Button change_to_usa_location= new Button(By.xpath(Variables.CHANGE_TO_USA_LOCATION.toString()));
-    public static Contact_US send_request() {
+    public static ContactUs send_request() {
         contact_us.click();
         Settings.waitInSeconds(3);
         name.enterText("DDI TEST NAME");
@@ -54,9 +54,9 @@ public class Contact_US extends Settings
         WebElement sent= driver.findElement(By.xpath(Variables.SENT_BUTTON.toString()));
         actions.moveToElement(sent).click().build().perform();
         waitInSeconds(5);
-        return new Contact_US();
+        return new ContactUs();
     }
-    public static Contact_US zoom_in_and_zoom_out_map()
+    public static ContactUs zoom_in_and_zoom_out_map()
     {
         contact_us.click();
         Settings.waitInSeconds(2);
@@ -67,7 +67,7 @@ public class Contact_US extends Settings
         zoom_in.click();
         zoom_out.click();
         zoom_out.click();
-        return new Contact_US();
+        return new ContactUs();
     }
     }
 

@@ -3,9 +3,11 @@ import Elements.Button;
 import Enums.Variables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import static Pages.HomePage.verify_response;
 import static org.testng.Assert.assertTrue;
 
-public class How_We_Work extends MainSettings.Settings
+public class HowWeWork extends MainSettings.Settings
 {
     private static Button hww_link=new Button(By.xpath(Variables.HOW_WE_WORK.toString()));
     private static Button business_model_fixed_time=new Button(By.xpath(Variables.FIXED_PRICE.toString()));
@@ -16,16 +18,17 @@ public class How_We_Work extends MainSettings.Settings
     private static Button approaches_off_the_group=new Button(By.xpath(Variables.OFF_THE_GROUP.toString()));
     public static void how_we_work_present() {
         WebElement how_we_work_link = null;
-
         try {
             how_we_work_link = getDriver().findElement(By.xpath(Variables.HOW_WE_WORK.toString()));
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
-        assertTrue(how_we_work_link != null, "Test case is FAILED - BLOG LINK is ABSENT!!!");
-
+        assertTrue(how_we_work_link != null, "Test case is FAILED - HOW_WE_WORK LINK is ABSENT!!!");
+        how_we_work_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
-    public static How_We_Work change_tabs()
+    public static HowWeWork change_tabs()
     {
         hww_link.click();
         waitInSeconds(2);
@@ -35,6 +38,6 @@ public class How_We_Work extends MainSettings.Settings
         approaches_exhaustive_delivery.click();
         approaches_innovation_labs.click();
         approaches_off_the_group.click();
-        return new How_We_Work();
+        return new HowWeWork();
     }
 }

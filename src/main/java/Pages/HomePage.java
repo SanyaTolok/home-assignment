@@ -10,13 +10,16 @@ import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static org.testng.Assert.assertTrue;
 
 public class HomePage extends Settings {
 
     private static Button start_project=new Button((By.xpath(Variables.START_PROJECT.toString())));
-    private static Button send=new Button(By.xpath(Variables.START_PROJECT_SEND_BUTTON.toString()));
     private static TextField name=new TextField(By.xpath(Variables.START_PROJECT_NAME.toString()));
     private static TextField email=new TextField(By.xpath(Variables.START_PROJECT_EMAIL.toString()));
     private static TextField phone=new TextField(By.xpath(Variables.START_PROJECT_PHONE.toString()));
@@ -34,7 +37,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         Assert.assertTrue(services_link != null, "Test case is FAILED - Services LINK is ABSENT!!!");
-
+        services_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
 
     public static void technology_link_present() {
@@ -45,7 +50,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         assertTrue(technology_link != null, "Test case is FAILED - TECHNOLOGY LINK is ABSENT!!!");
-
+        technology_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
 
     public static void blog_link_present() {
@@ -56,7 +63,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         assertTrue(blog_link != null, "Test case is FAILED - BLOG LINK is ABSENT!!!");
-
+       blog_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
 
     public static void company_link_present() {
@@ -67,7 +76,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         assertTrue(company_link != null, "Test case is FAILED - COMPANY LINK is ABSENT!!!");
-
+        company_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
 
     public static void contuct_us_link_present() {
@@ -78,7 +89,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         assertTrue(contuct_us_link != null, "Test case is FAILED - CONTACT US LINK is ABSENT!!!");
-
+        contuct_us_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
 
 
@@ -90,7 +103,9 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         assertTrue(portfolio_link != null, "Test case is FAILED -PORTFOLIO LINK is ABSENT!!!");
-
+        portfolio_link.click();
+        waitInSeconds(2);
+        verify_response();
     }
     public static HomePage send_request()
     {
@@ -124,6 +139,36 @@ public class HomePage extends Settings {
         sign_in.click();
         congrats.isPresent();
         return new HomePage();
+    }
+    static void verify_response()
+    {
+        URL url = null;
+        try {
+            url = new URL(driver.getCurrentUrl());
+        } catch (MalformedURLException e1) {
+            e1.printStackTrace();
+        }
+        HttpURLConnection httpCon = null;
+        try {
+            if (url != null) {
+                httpCon = (HttpURLConnection)url.openConnection();
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        try {
+            if (httpCon != null) {
+                if (httpCon.getResponseMessage().contains("OK")) {
+                    System.out.println("\n Response Message is " + httpCon.getResponseMessage());
+                    httpCon.disconnect();
+                } else {
+                    Assert.fail("\n Response Message isn't OK, response is " + httpCon.getResponseMessage());
+                    httpCon.disconnect();
+                }
+            }
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 }
 

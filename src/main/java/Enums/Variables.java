@@ -3,7 +3,6 @@ package Enums;
 public enum Variables
 {
     //HomePage
-    SUBSCRIPTION_POPUP(".//*[@id='subscribeModal']/div/div/div[1]/button"),
     SERVICES_LINK(".//*[@id='nav']/ul/li[1]/a"),
     COMPANY_LINK(".//*[@id='nav']/ul/li[3]/a"),
     TECHNOLOGY_LINK(".//*[@id='nav']/ul/li[4]/a"),
@@ -16,7 +15,6 @@ public enum Variables
     CONGRATS("html/body/div[2]/div/div/div/p"),
     HOW_WE_WORK(".//*[@id='nav']/ul/li[2]/a"),
     //Services
-    OPEN_MENU_SERVICES(".//*[@id='nav']/ul/li[1]/div"),
     CUSTOM_SERVICES(".//*[@id='nav']/ul/li[1]/div/div/ul/li[1]/a"),
     NAME_SERVICES_FORM(".//*[@id='request-quote-name']"),
     EMAIL_SERVICES_FORM(".//*[@id='request-quote-email']"),
@@ -69,16 +67,11 @@ public enum Variables
     PROGRAMMING_TAB("html/body/div[2]/div/div/ul/li[5]/a"),
     MARKETING_TAB("html/body/div[2]/div/div/ul/li[6]/a"),
     CLOUD_TECHNOLOGY_TAB("html/body/div[2]/div/div/ul/li[7]/a"),
-    DROPDOWN("//ul[@class='post-menu dropdown']"),
-    DELETE("//li[@data-action='delete']"),
-    LIST_OF_POSTS(".//*[@id='posts']"),
     ARTICLE_LINK("html/body/div[3]/div[1]/div[2]/div[5]/div[3]/a[2]"),
     SHARE_FACEBOOK("html/body/div[6]/div[1]/ul/li[1]"),
     SHARE_TWEET("html/body/div[6]/div[1]/ul/li[2]"),
     SHARE_LINKED_IN("html/body/div[6]/div[1]/ul/li[3]"),
     SHARE_GOOGLE("html/body/div[6]/div[1]/ul/li[4]"),
-    SHARE_EMAIL("html/body/div[6]/div[1]/ul/li[5]"),
-    CANCEL_FACEBOOK(".//*[@id='u_0_3']"),
     START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/div[1]"),
     DISQUS_LOGIN(".//*[@id='form']/form/div/div[4]/div/section/div[1]/ul/li[1]/button"),
     DISQUS_EMAIL(".//*[@id='auth-form']/div[2]/input"),
@@ -86,7 +79,6 @@ public enum Variables
     LOGIN_DISQUS(".//*[@id='auth-form-button']"),
     POST_COMMENT_BUTTON(".//*[@id='form']/form/div/div[3]/div[5]/div/section/div/button"),
     ACTIVATE_START_DISCUSS(".//*[@id='form']/form/div/div[3]/div[1]/span"),
-    CANCEL_GOOGLE_BUTTON("html/body/div[1]/div[2]/div[2]/table/tbody/tr/td[1]/div[2]"),
     //How we work
     TIME_MATERIALS(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[3]/a"),
     FIXED_PRICE(".//*[@id='main']/section[2]/div/div[1]/div[1]/ul/li[1]/a"),

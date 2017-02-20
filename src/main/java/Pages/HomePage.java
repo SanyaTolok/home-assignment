@@ -37,7 +37,6 @@ public class HomePage extends Settings {
             e.printStackTrace();
         }
         Assert.assertTrue(services_link != null, "Test case is FAILED - Services LINK is ABSENT!!!");
-        services_link.click();
         waitInSeconds(2);
         verify_response();
     }

@@ -65,6 +65,7 @@ public class Blog extends Settings {
         article.click();
         share_facebook.waitForElementIsPresent();
         share_facebook.click();
+        waitInSeconds(2);
         String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles

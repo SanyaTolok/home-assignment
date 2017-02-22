@@ -194,6 +194,7 @@ public class Blog extends Settings {
         start_discuss.isClickable();
         Settings.waitInSeconds(2);
         disqus_login.click();
+        waitInSeconds(5);
         String parentWindowHandler = driver.getWindowHandle(); // Store your parent window
         String subWindowHandler = null;
         Set<String> handles = driver.getWindowHandles(); // get all window handles

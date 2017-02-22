@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 import java.awt.image.PixelGrabber;
 
 public class CompareUtil {
-    public enum Result { Matched, SizeMismatch, PixelMismatch };
+    public enum Result { Matched, SizeMismatch, PixelMismatch }
     public static Result CompareImage(String baseFile, String actualFile) {
         Result compareResult = Result.PixelMismatch;
         Image baseImage = Toolkit.getDefaultToolkit().getImage(baseFile);

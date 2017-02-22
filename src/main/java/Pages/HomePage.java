@@ -4,12 +4,16 @@ import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
+import com.intellij.xml.actions.xmlbeans.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -168,6 +172,19 @@ public class HomePage extends Settings {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    public static HomePage compare_home_page_screen() {
+        waitInSeconds(2);
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("homePageActualScreen.png"));
+        CompareUtil.CompareImage("homePageScreen.png","screenshot.png");
+        try {
+            org.apache.commons.io.FileUtils.forceDelete(new File("homePageActualScreen.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new HomePage();
     }
 }
 

@@ -1,11 +1,13 @@
 package Pages;
+import org.testng.Assert;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.PixelGrabber;
 
-public class CompareUtil {
+class CompareUtil {
     public enum Result { Matched, SizeMismatch, PixelMismatch }
-    public static Result CompareImage(String baseFile, String actualFile) {
+    static Result CompareImage(String baseFile, String actualFile) {
         Result compareResult = Result.PixelMismatch;
         Image baseImage = Toolkit.getDefaultToolkit().getImage(baseFile);
         Image actualImage = Toolkit.getDefaultToolkit().
@@ -16,23 +18,16 @@ public class CompareUtil {
             int[] baseImageData = null;
             int[] actualImageData = null;
             if(baseImageGrab.grabPixels()) {
-                int width = baseImageGrab.getWidth();
-                int height = baseImageGrab.getHeight();
-                baseImageData = new int[width * height];
                 baseImageData = (int[])baseImageGrab.getPixels();
             }
             if(actualImageGrab.grabPixels()) {
-                int width = actualImageGrab.getWidth();
-                int height = actualImageGrab.getHeight();
-                actualImageData = new int[width * height];
                 actualImageData = (int[])actualImageGrab.getPixels();
             }
-            System.out.println(baseImageGrab.getHeight() + "<>" +
-                    actualImageGrab.getHeight());
-            System.out.println(baseImageGrab.getWidth() + "<>" +
-                    actualImageGrab.getWidth());
+            System.out.println(baseImageGrab.getHeight() + "<--baseImage Height and  actualImage  Height-->" +actualImageGrab.getHeight());
+            System.out.println(baseImageGrab.getWidth() + "<--baseImage Width and  actualImage  Width-->" +actualImageGrab.getWidth());
             if ((baseImageGrab.getHeight() != actualImageGrab.getHeight()) || (baseImageGrab.getWidth() != actualImageGrab.getWidth())){
                 compareResult = Result.SizeMismatch;
+                Assert.fail("Image Height or Width not same Test failed");
             }
             else if(java.util.Arrays.equals(baseImageData,actualImageData)){
                 compareResult = Result.Matched;

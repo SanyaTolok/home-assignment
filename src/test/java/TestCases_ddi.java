@@ -59,4 +59,6 @@ public class TestCases_ddi extends Settings
     public void technology_link_present() {HomePage.technology_link_present();}
     @Test(priority = 1, groups = "smoke")
     public void add_discuss_comment() {Blog.discuss_add_comment();}
+    @Test(priority = 1, groups = "smoke")
+    public void compare_screen() {HomePage.compare_home_page_screen();}
 }

@@ -4,7 +4,7 @@ import Elements.Element;
 import Elements.TextField;
 import Enums.Variables;
 import MainSettings.Settings;
-import com.intellij.xml.actions.xmlbeans.FileUtils;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -177,8 +177,12 @@ public class HomePage extends Settings {
     public static HomePage compare_home_page_screen() {
         waitInSeconds(2);
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("homePageActualScreen.png"));
-        CompareUtil.CompareImage("homePageScreen.png","screenshot.png");
+        try {
+            FileUtils.copyFile(scrFile, new File("homePageActualScreen.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        CompareUtil.CompareImage("homePageScreen.png","homePageActualScreen.png");
         try {
             org.apache.commons.io.FileUtils.forceDelete(new File("homePageActualScreen.png"));
         } catch (IOException e) {

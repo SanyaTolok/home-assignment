@@ -26,6 +26,7 @@ public class Services extends Settings {
         Settings.waitInSeconds(5);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("scroll(0,3500);");//Scroll down
+        waitInSeconds(2);
         name.enterText("DDI TEST NAME");
         phone.enterText("17183559302");
         email.enterText("test@ddi-dev.com");

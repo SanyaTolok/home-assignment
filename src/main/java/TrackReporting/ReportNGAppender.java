@@ -17,11 +17,11 @@ public class ReportNGAppender extends AppenderSkeleton {
         Logger.log(valueToLog);
     }
 
- //   @Override
+    @Override
     public void close() {
     }
 
-//    @Override
+    @Override
     public boolean requiresLayout() {
         return true;
     }

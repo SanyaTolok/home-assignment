@@ -3,17 +3,20 @@ package MainSettings;
 import Pages.HomePage;
 import TrackReporting.LoggingEventListener;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 public class Settings {
     protected static WebDriver driver;
-    protected String baseURL = "http://ddi-dev.com";
-    public StringBuffer verificationErrors = new StringBuffer();
-    protected HomePage mainPage;
+    private String baseURL = "http://ddi-dev.com";
+    private StringBuffer verificationErrors = new StringBuffer();
+    private HomePage mainPage;
     private static final WebDriverEventListener eventListener = new LoggingEventListener();
     @BeforeMethod
     public void setUp()
@@ -46,5 +49,9 @@ public class Settings {
             e.printStackTrace();
         }
     }
-
+    public static void waitUntillElementClickable(WebElement element)
+    {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="ddi_test" thread-count="1">
+<suite name="ddi_test" parallel="tests" thread-count="10">
 
     <test name="ddi_dev">
         <classes>
@@ -9,7 +9,12 @@
     </test>
     <!--<test name="ddi_dev_2">-->
         <!--<classes>-->
-            <!--<class name="TestCases_ddi_2"/>-->
+            <!--<class name="TestCase1"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <!--<test name="ddi_dev_3">-->
+        <!--<classes>-->
+            <!--<class name="TestCase2"/>-->
         <!--</classes>-->
     <!--</test>-->
 </suite>

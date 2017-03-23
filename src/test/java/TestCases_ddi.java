@@ -7,7 +7,6 @@ public class TestCases_ddi extends Settings {
     public void verify_links_management_CEO() {
         Management.verify_links_CEO();
     }
-
     @Test(priority = 1, groups = "smoke")
     public void verify_links_bdm_Europa() {
         Management.verify_links_bdm_Europa();

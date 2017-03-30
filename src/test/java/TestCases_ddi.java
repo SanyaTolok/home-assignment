@@ -43,10 +43,6 @@ public class TestCases_ddi extends Settings {
     }
 
     @Test(priority = 1, groups = "smoke")
-    public void how_we_work_links_verify_present() {
-    }
-
-    @Test(priority = 1, groups = "smoke")
     public void test_paging_blog() {
         Blog.test_paging();
     }

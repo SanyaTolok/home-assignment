@@ -162,7 +162,7 @@ public class Blog extends Settings {
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
         String url_linkedin = driver.getCurrentUrl();
-        if(url_linkedin.contains("https://www.linkedin.com/uas/login")) {
+        if(url_linkedin.contains("https://www.linkedin.com/start/join")) {
             driver.close();
         }
         else

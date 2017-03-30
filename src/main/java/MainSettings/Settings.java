@@ -2,6 +2,7 @@ package MainSettings;
 
 import TrackReporting.LoggingEventListener;
 import com.google.common.collect.ImmutableMap;
+import org.junit.BeforeClass;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,8 +26,8 @@ public class Settings {
     public static ChromeDriverService service;
     //private HomePage mainPage;
     private static final WebDriverEventListener eventListener = new LoggingEventListener();
-@BeforeMethod
-public static void createAndStartService() {
+    @BeforeMethod
+    public static void createAndStartService() {
     service = new ChromeDriverService.Builder().usingDriverExecutable(new File("/usr/local/share/chromedriver")).usingAnyFreePort()
             .withSilent(true)
             .withVerbose(false)

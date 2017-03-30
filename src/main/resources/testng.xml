@@ -1,20 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="ddi_test" parallel="tests" thread-count="10">
+<suite name="ddi_test" parallel="methods" verbose="1" thread-count="1">
 
     <test name="ddi_dev">
         <classes>
             <class name="TestCases_ddi"/>
         </classes>
     </test>
-    <!--<test name="ddi_dev_2">-->
-        <!--<classes>-->
-            <!--<class name="TestCase1"/>-->
-        <!--</classes>-->
-    <!--</test>-->
-    <!--<test name="ddi_dev_3">-->
-        <!--<classes>-->
-            <!--<class name="TestCase2"/>-->
-        <!--</classes>-->
-    <!--</test>-->
 </suite>

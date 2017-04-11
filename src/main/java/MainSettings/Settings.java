@@ -2,7 +2,6 @@ package MainSettings;
 
 import TrackReporting.LoggingEventListener;
 import com.google.common.collect.ImmutableMap;
-import org.junit.BeforeClass;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,7 +30,7 @@ public class Settings {
     service = new ChromeDriverService.Builder().usingDriverExecutable(new File("/usr/local/share/chromedriver")).usingAnyFreePort()
             .withSilent(true)
             .withVerbose(false)
-            //.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
+            .withEnvironment(ImmutableMap.of("DISPLAY",":10"))
             .build();
     try {
         service.start();

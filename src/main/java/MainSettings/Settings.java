@@ -31,7 +31,7 @@ public class Settings {
     service = new ChromeDriverService.Builder().usingDriverExecutable(new File("/usr/local/share/chromedriver")).usingAnyFreePort()
             .withSilent(true)
             .withVerbose(false)
-            .withEnvironment(ImmutableMap.of("DISPLAY",":10"))
+            //.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
             .build();
     try {
         service.start();
@@ -42,12 +42,10 @@ public class Settings {
     @BeforeMethod
     public void setUp() throws IOException {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-fullscreen");
+        options.addArguments("--fast");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         driver = new EventFiringWebDriver(new RemoteWebDriver(service.getUrl(), capabilities)).register(eventListener);
-        driver.manage().window().maximize();
-        //driver = new RemoteWebDriver(service.getUrl(), DesiredCapabilities.chrome());
         driver.get(baseURL);
         driver.manage().window().setSize(new Dimension(1920, 1080));
     }

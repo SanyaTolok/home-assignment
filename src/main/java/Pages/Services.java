@@ -18,6 +18,7 @@ public class Services extends Settings {
     private static TextField email = new TextField(By.xpath(Variables.EMAIL_SERVICES_FORM.toString()));
     private static TextField phone = new TextField(By.xpath(Variables.PHONE_SERVICES_FORM.toString()));
     private static TextField description=new TextField(By.xpath(Variables.DESCRIPTION_SERVICES_FORM.toString()));
+
     public static Services get_request_from_services_page()
     {
         Actions action = new Actions(driver);

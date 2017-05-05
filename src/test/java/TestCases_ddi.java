@@ -64,7 +64,7 @@ public class TestCases_ddi extends Settings {
 
     @Test(priority = 1, groups = "smoke")
     public void test_blog_tabs() {
-        Blog.all_tabs_exsist();
+        Blog.all_tabs_exist();
     }
 
     @Test(priority = 1, groups = "smoke")
@@ -73,7 +73,8 @@ public class TestCases_ddi extends Settings {
     }
 
     @Test(priority = 1, groups = "smoke")
-    public void share_blog_google() {
+    public void share_blog_google()
+    {
         Blog.share_google();
     }
 

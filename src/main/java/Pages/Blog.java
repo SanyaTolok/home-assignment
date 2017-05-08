@@ -104,6 +104,7 @@ public class Blog extends Settings {
             subWindowHandler = iterator.next();
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
+        waitInSeconds(2);
         String url = driver.getCurrentUrl();// get popup url
         if(url.contains("google.com"))
         {
@@ -133,8 +134,10 @@ public class Blog extends Settings {
             subWindowHandler = iterator.next();
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
+        waitInSeconds(2);
         String url_tweet = driver.getCurrentUrl();
-               if(url_tweet.contains("https://twitter.com")) {
+               if(url_tweet.contains("https://twitter.com"))
+               {
                         driver.close();
         }
         else

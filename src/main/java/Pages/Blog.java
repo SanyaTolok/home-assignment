@@ -39,7 +39,7 @@ public class Blog extends Settings {
     private static Button tab_case=new Button(By.xpath(Variables.CASE_TAB.toString()));
     private static Button tab_programming=new Button(By.xpath(Variables.PROGRAMMING_TAB.toString()));
     private static Button post=new Button(By.xpath(Variables.POST_COMMENT_BUTTON.toString()));
-    public static Blog all_tabs_exsist()
+    public static Blog all_tabs_exist()
     {
         blog_link.click();
         tab_case.isPresent();
@@ -104,8 +104,9 @@ public class Blog extends Settings {
             subWindowHandler = iterator.next();
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
+        waitInSeconds(2);
         String url = driver.getCurrentUrl();// get popup url
-        if(url.contains("https://plus.google.com/share?"))
+        if(url.contains("google.com"))
         {
            driver.close();
         }
@@ -133,8 +134,10 @@ public class Blog extends Settings {
             subWindowHandler = iterator.next();
         }
         driver.switchTo().window(subWindowHandler); // switch to popup window
+        waitInSeconds(2);
         String url_tweet = driver.getCurrentUrl();
-               if(url_tweet.contains("https://twitter.com")) {
+               if(url_tweet.contains("https://twitter.com"))
+               {
                         driver.close();
         }
         else

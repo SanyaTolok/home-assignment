@@ -88,6 +88,7 @@
 
 <build>
 <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <testSourceDirectory>${project.basedir}/test/java</testSourceDirectory>
 <scriptSourceDirectory>${project.basedir}/src/main/</scriptSourceDirectory>
 <outputDirectory>${project.basedir}/target/classes</outputDirectory>
 <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
@@ -371,4 +372,4 @@
 <reporting>
 <outputDirectory>${project.basedir}/target/site</outputDirectory>
 </reporting>
-        </project>
+</project>

@@ -14,4 +14,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn test
+      run: mvn -Dtest=TestCasesAccount -Dwebdriver.base.url="https://google.com/" test --fail-never test

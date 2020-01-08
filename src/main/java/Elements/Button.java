@@ -1,15 +1,13 @@
 package Elements;
+
 import org.openqa.selenium.By;
 
-public class Button extends Element
-{
-    public Button(By by)
-    {
+public class Button extends Element {
+    public Button(By by) {
         super(by);
     }
 
-    public void click()
-    {
+    public void click() {
         composeWebElement().click();
     }
 

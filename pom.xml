@@ -26,8 +26,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.0.0</version>
-            <scope>compile</scope>
+            <version>6.9.9</version>
         </dependency>
         <dependency>
             <groupId>org.test4j</groupId>

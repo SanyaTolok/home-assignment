@@ -14,8 +14,8 @@ import java.io.IOException;
 
 public class Settings {
     private static final WebDriverEventListener eventListener = new LoggingEventListener();
-    protected static String baseURL = System.getProperty("webdriver.base.url");
-    //protected static String baseURL = System.getProperty("http://google.com/");
+    //protected static String baseURL = System.getProperty("webdriver.base.url");
+    protected static String baseURL = "http://google.com/";
     protected static WebDriver driver;
     protected static ChromeDriverService service;
 

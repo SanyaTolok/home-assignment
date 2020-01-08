@@ -10,13 +10,12 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import java.io.File;
 import java.io.IOException;
 
 public class Settings {
     private static final WebDriverEventListener eventListener = new LoggingEventListener();
     protected static String baseURL = System.getProperty("webdriver.base.url");
+    //protected static String baseURL = System.getProperty("http://google.com/");
     protected static WebDriver driver;
     protected static ChromeDriverService service;
 

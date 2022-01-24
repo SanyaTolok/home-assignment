@@ -32,8 +32,6 @@ public class Settings {
         driver = new FirefoxDriver(options);
         driver.manage().deleteAllCookies();
         driver.get("https://google.com");
-        String uAgent = (String)((JavascriptExecutor) driver).executeScript("return navigator.userAgent;");
-
     }
 
     @AfterMethod

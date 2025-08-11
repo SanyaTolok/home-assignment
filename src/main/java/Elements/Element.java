@@ -5,12 +5,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.w3c.dom.Document;
 
 import static MainSettings.Settings.getDriver;
-import static MainSettings.Settings.waitInSeconds;
 
-public class Element {
+import java.time.Duration;
+import java.util.concurrent.TimeoutException;
+
+public class Element extends MainSettings.Settings {
     protected By by;
 
     public Element(By by) {
@@ -27,17 +32,6 @@ public class Element {
             return true;
         } catch (NoSuchElementException e) {
             return false;
-        }
-    }
-
-    public void waitForElementIsPresent() {
-        for (int i = 0; i < 25; i++) {
-            if (isPresent()) {
-                waitInSeconds(1);
-                break;
-            } else {
-                waitInSeconds(1);
-            }
         }
     }
 
@@ -69,5 +63,20 @@ public class Element {
                 "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
                 "arguments[0].dispatchEvent(evObj);";
         ((JavascriptExecutor)getDriver()).executeScript(javaScript, composeWebElement());
+    }
+
+    public void waitForElementToBeClickable(int i) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
+        wait.until(ExpectedConditions.elementToBeClickable(composeWebElement()));
+    }
+
+    public void waitForElementToBeVisible(int i) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
+        wait.until(ExpectedConditions.visibilityOf(composeWebElement()));
+    }
+
+    public void waitForElementToBePresent(int i) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 }

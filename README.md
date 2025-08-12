@@ -30,3 +30,5 @@ And generate report after test run:
     
 ## Note: 
 Above test cases covering functionality which described for attributes but automated tests also covering some of visual verification that elements are represeted are in needed part of DOM tree and also you can manipulate them per UI, real number of asserts and scenarious are way more bigger but it's TT, above cases covering happy path and all of them related to smoke suite for attributes page.
+## Non functional tests
+Non functional tests are done using google lighthouse see scale.neptune.ai-20250812T094944.html 

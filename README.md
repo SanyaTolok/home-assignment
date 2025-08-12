@@ -12,6 +12,8 @@ To generate report install allure:
 `brew install allure` 
 And generate report after test run: 
 `allure generate --single-file` 
+<img width="1201" height="523" alt="Screenshot 2025-08-12 at 13 44 15" src="https://github.com/user-attachments/assets/be505949-b93d-47b2-87b7-fefa0d2f4c03" />
+
 ## Test Cases
 1. Verify that you are on attributes tab and it is active
 2. Verify that user able to search for existing attribute and find it

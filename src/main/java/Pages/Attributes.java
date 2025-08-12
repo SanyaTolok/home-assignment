@@ -30,11 +30,25 @@ public class Attributes extends Settings {
         }
     }
 
+    public static void acceptCookies() {
+        Element acceptCookiesButton = new Element(By.id(Enums.Variables.ACCEPT_COOKIES_BUTTON.toString()));
+        acceptCookiesButton.waitForElementToBeVisible(10);
+        acceptCookiesButton.click();
+        log.info("Cookies accepted");
+    }
+
     public static void searchForAttribute(String attributeName) {
         log.info("Searching for attribute: " + attributeName);
         TextField searchBox = new TextField(By.xpath(Enums.Variables.SEARCH_ATTRIBUTE_BOX.toString()));
         searchBox.waitForElementToBeVisible(10);
+        searchBox.click();
+        searchBox.clear();
+        log.info("Entering text in search box");
         searchBox.enterText(attributeName);
-        log.info("Search completed for attribute: " + attributeName);
+    }
+
+    public static void selectSearchResult(){
+        Element searchResult = new Element(By.xpath(Enums.Variables.SEARCH_ATTRIBUTE_RESULT.toString()));
+        searchResult.click();
     }
 }

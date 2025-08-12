@@ -20,16 +20,29 @@ public class testCasesAttributestPage extends Settings {
     }
 
     @Test(priority = 1, groups = "smoke")
-    public void attibute_page_tests() throws TimeoutException {
+    public void attibute_page_tests() {
+        Asserts.AssertsAttributes.assertCoockiesDialogShown();
+        Attributes.acceptCookies();
         Attributes.closeDialog();
+        Asserts.AssertsAttributes.assertAttributesPageTabs();
     }
 
     @Test(priority = 2, groups = "smoke")
-    public void search_attribute_tests() throws TimeoutException {
+    public void search_attribute_date_time_value_test() {
+        Attributes.searchForAttribute("sys/creation_time");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/creation_time");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("2025/07/18 13:55:09");
     }
 
     @Test(priority = 3, groups = "smoke")
-    public void attibute_types_tests() throws TimeoutException {
+    public void search_attribute_single_int_value(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("config/data/batch_size");
+        Asserts.AssertsAttributes.assertAttributeFound("config/data/batch_size");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("1024");
+        
     }
 
     @AfterClass

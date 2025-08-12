@@ -4,16 +4,11 @@ package Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.w3c.dom.Document;
-
-import static MainSettings.Settings.getDriver;
-
 import java.time.Duration;
-import java.util.concurrent.TimeoutException;
 
 public class Element extends MainSettings.Settings {
     protected By by;
@@ -33,11 +28,6 @@ public class Element extends MainSettings.Settings {
         } catch (NoSuchElementException e) {
             return false;
         }
-    }
-
-    public short getAttribute(String id) {
-        id = String.valueOf(Document.ATTRIBUTE_NODE);
-        return Short.parseShort(id);
     }
 
     public void enterText(String string) {
@@ -79,4 +69,17 @@ public class Element extends MainSettings.Settings {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
+
+    public static String getElementText(WebDriver driver, By by, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+            String text = element.getText();
+            return text;
+        } catch (Exception e) {
+            System.err.println("Error getting element text: " + e.getMessage());
+            return null;
+        }
+    }
+
 }

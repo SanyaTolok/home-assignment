@@ -32,6 +32,14 @@ public class testCasesAttributestPage extends Settings {
     }
 
     @Test(priority = 3, groups = "smoke")
+    public void search_attribute_time_value_test() {
+        Attributes.searchForAttribute("sys/running_time_seconds");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/running_time_seconds");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("0d 00h 03m 12s");
+    }
+
+    @Test(priority = 4, groups = "smoke")
     public void search_attribute_single_int_value(){
         driver.navigate().to(baseUrl);
         Attributes.searchForAttribute("config/data/batch_size");
@@ -41,7 +49,7 @@ public class testCasesAttributestPage extends Settings {
         
     }
 
-    @Test(priority = 3, groups = "smoke")
+    @Test(priority = 5, groups = "smoke")
     public void search_attribute_single_float_value(){
         driver.navigate().to(baseUrl);
         Attributes.searchForAttribute("config/model/dropout");
@@ -50,7 +58,7 @@ public class testCasesAttributestPage extends Settings {
         Asserts.AssertsAttributes.assertAttributeValue("0.13");
     }
 
-     @Test(priority = 3, groups = "smoke")
+     @Test(priority = 6, groups = "smoke")
     public void search_attribute_single_string_value(){
         driver.navigate().to(baseUrl);
         Attributes.searchForAttribute("sys/custom_run_id");
@@ -60,7 +68,7 @@ public class testCasesAttributestPage extends Settings {
         
     }
 
-    @Test(priority = 3, groups = "smoke")
+    @Test(priority = 7, groups = "smoke")
     public void search_attribute_single_boolean_value(){
         driver.navigate().to(baseUrl);
         Attributes.searchForAttribute("sys/experiment/is_head");
@@ -74,13 +82,37 @@ public class testCasesAttributestPage extends Settings {
         Asserts.AssertsAttributes.assertAttributeValue("False");
     }
 
-    @Test(priority = 3, groups = "smoke")
+    @Test(priority = 8, groups = "smoke")
     public void search_attribute_which_not_exist(){
         driver.navigate().to(baseUrl);
-        Attributes.searchForAttribute(" sys/experiment/is_head/");
+        Attributes.searchForAttribute("sys/experiment/is_head/");
         Asserts.AssertsAttributes.assertAttributeNotFound();
     }
-   
+
+    @Test(priority = 9, groups = "smoke")
+    public void search_attribute_chart_diagramm_float(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("debug/activation/layer_0");
+        Asserts.AssertsAttributes.assertAttributeFound("debug/activation/layer_0");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertChartDiagram();
+    }
+
+     @Test(priority = 9, groups = "smoke")
+    public void search_attribute_tags(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("sys/tags");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/tags");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeTag("AdamW");
+        Asserts.AssertsAttributes.assertAttributeTag("BPE");
+        Asserts.AssertsAttributes.assertAttributeTag("Lion");
+        Asserts.AssertsAttributes.assertAttributeTag("SentencePiece");
+        Asserts.AssertsAttributes.assertAttributeTag("gelu");
+        Asserts.AssertsAttributes.assertAttributeTag("gelu_new");
+        Asserts.AssertsAttributes.assertAttributeTag("relu");
+        Asserts.AssertsAttributes.assertAttributeTag("silu");
+    }
     
 
     @AfterClass

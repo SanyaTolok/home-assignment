@@ -1,4 +1,6 @@
 package Asserts;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -23,6 +25,20 @@ public class AssertsAttributes extends Settings {
         Assert.assertEquals(value, expectedAttributeName, "Attribute name does not match expected value");
     }
 
+    public static void assertAttributeTag(String expectedAttributeName) {
+        boolean tagExists = false;
+        List<WebElement> webElements = driver.findElements(By.xpath("//div[@data-role=\"tag\"]"));
+        for (WebElement element : webElements) {
+            String tagValue = element.getAttribute("data-tag");
+            if (tagValue.equals(expectedAttributeName)) {
+                log.info("Attribute tag found: " + expectedAttributeName);
+                tagExists = true;
+                return;
+            }}
+            Assert.assertTrue(tagExists, "Attribute tag not found: " + expectedAttributeName);
+    }
+
+
      public static void assertAttributeNotFound() {
         Element attribute = new Element(By.xpath(Enums.Variables.NO_SEARCH_RESULTS_TEXT.toString()));
         Assert.assertTrue(attribute.isPresent(), "Attribute not found");   
@@ -36,6 +52,11 @@ public class AssertsAttributes extends Settings {
         log.info("Checking if cookies dialog is present");
         Button button = new Button(By.id(Enums.Variables.ACCEPT_COOKIES_BUTTON.toString()));
         Assert.assertTrue(button.isPresent(), "Cookies dialog is not present");
+    }
+
+    public static void assertChartDiagram(){
+        Element charElement = new Element(By.xpath(Enums.Variables.CHART_DIAGRAM.toString()));
+        Assert.assertTrue(charElement.isPresent(), "Diagram not present in DOM tree");
     }
 
     public static void assertAttributeValue(String expectedValue) {

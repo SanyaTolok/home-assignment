@@ -2,6 +2,7 @@ package Enums;
 
 public enum Variables
 {
+    NO_SEARCH_RESULTS_TEXT("//span[@class='n--color-text-secondary n--fontSize-xs']"),
     CHARTS_TAB_BUTTON("//button[@data-tab-item=\"charts\"]"),
     ATTRIBUTES_TAB_BUTTON("//button[@data-tab-item=\"attributes\"]"),
     DASHBOARD_TAB_BUTTON("//button[@data-tab-item=\"dashboard\"]"),

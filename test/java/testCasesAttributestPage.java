@@ -1,9 +1,6 @@
 import MainSettings.Settings;
 import Pages.*;
-
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeoutException;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -14,8 +11,7 @@ public class testCasesAttributestPage extends Settings {
 
     @BeforeClass
     @Parameters({"browser", "testName"})
-    public void FileReadBrowserLaunch(@Optional("Chrome") String browser, @Optional("Account test cases") String testName) throws MalformedURLException {
-        System.out.println("Testing Account");
+    public void FileReadBrowserLaunch(@Optional("Chrome") String browser, @Optional("Attributes test cases") String testName) throws MalformedURLException {
         launchBrowser(browser, testName);
     }
 
@@ -45,11 +41,50 @@ public class testCasesAttributestPage extends Settings {
         
     }
 
+    @Test(priority = 3, groups = "smoke")
+    public void search_attribute_single_float_value(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("config/model/dropout");
+        Asserts.AssertsAttributes.assertAttributeFound("config/model/dropout");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("0.13");
+    }
+
+     @Test(priority = 3, groups = "smoke")
+    public void search_attribute_single_string_value(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("sys/custom_run_id");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/custom_run_id");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("llm_train-v945-run_0_1_1_1");
+        
+    }
+
+    @Test(priority = 3, groups = "smoke")
+    public void search_attribute_single_boolean_value(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("sys/experiment/is_head");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/experiment/is_head");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("True");
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute("sys/failed");
+        Asserts.AssertsAttributes.assertAttributeFound("sys/failed");
+        Attributes.selectSearchResult();
+        Asserts.AssertsAttributes.assertAttributeValue("False");
+    }
+
+    @Test(priority = 3, groups = "smoke")
+    public void search_attribute_which_not_exist(){
+        driver.navigate().to(baseUrl);
+        Attributes.searchForAttribute(" sys/experiment/is_head/");
+        Asserts.AssertsAttributes.assertAttributeNotFound();
+    }
+   
+    
+
     @AfterClass
     public void TerminateTestCase() {
         driver.quit();
     }
-
-    
-
 }

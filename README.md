@@ -17,10 +17,11 @@ And generate report after test run:
 3. Verify that user able to search for non existing attribute and proper message would be shown
 4. Verify attributes metadata structure 
 5. Verify that attribute can hold single piece of data such as a int number. Attribute for automated tests: config/data/batch_size
-6. Verify that attribute can hold single piece of data such as a float number
+6. Verify that attribute can hold single piece of data such as a float number 
+. Attribute for automated tests: config/model/dropout (it's actually double not float but I wasn't able to find single float good for testing)
 7. Verify that attribute can hold single piece of data such as a String (string with combination of letters and nambers) Test data Attribute for automated tests: sys/custom_run_id
-8. Verify that attribute can hold single piece of data such as a boolean variabile (true/false). Attribute for automated tests: sys/custom_run_id sys/experiment/is_head and sys/failed
-9. Verify that the attribute sys/custom_run_id correctly stores a single value, such as a unique run identifier.
+8. Verify that attribute can hold single piece of data such as a boolean variabile (true/false). Attribute for automated tests: sys/experiment/is_head and sys/failed
+9. Verify that correct message shown if there are no records found during search.
 10. Verify that attribute can hold single piece of data such as date/time. Attribute for automated tests:  sys/creation_time
 11. Verify that attribute can hold single piece of data such as time. Attribute for automated tests:   sys/running_time_seconds
 12. Verify that attribute can hold series of numeric values (floats or integers). Attribute for automated tests: debug/activation/layer_0

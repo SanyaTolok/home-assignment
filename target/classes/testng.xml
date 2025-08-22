@@ -4,7 +4,7 @@
 
     <test name="UI_TEST">
         <classes>
-            <class name="testCasesAttributestPage"/>
+            <class name="LoginTest"/>
         </classes>
     </test>
 </suite>

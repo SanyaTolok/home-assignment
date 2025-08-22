@@ -2,17 +2,15 @@ package Enums;
 
 public enum Variables
 {
-    CHART_DIAGRAM("//div[@data-role=\"chart-with-toolbar\"]"),
-    NO_SEARCH_RESULTS_TEXT("//span[@class='n--color-text-secondary n--fontSize-xs']"),
-    CHARTS_TAB_BUTTON("//button[@data-tab-item=\"charts\"]"),
-    ATTRIBUTES_TAB_BUTTON("//button[@data-tab-item=\"attributes\"]"),
-    DASHBOARD_TAB_BUTTON("//button[@data-tab-item=\"dashboard\"]"),
-    ACCEPT_COOKIES_BUTTON("cookiescript_accept"),
-    CLOSE_POPUP_BUTTON("//button[@aria-label=\"Close guide\"]"),
-    POPUP_VIEW("//*[@id=\"userflow-ui\"]/div[1]/div[1]/div[1]/div[1]/iframe"),
-    SEARCH_ATTRIBUTE_BOX("//input[@data-role=\"search-input\"]"), 
-    ATTRIBUTE_VALUE("//div[@data-role=\"av-text-preview-body\"]"), 
-    SEARCH_ATTRIBUTE_RESULT("//div[@data-role=\"menu-item\"]");
+    LOGIN_EMAIL_INPUT("email"),
+    LOGIN_EMAIL("superadmin@gmail.com"),
+    LOGIN_PASSWORD("Qwerty123!"),
+    LOGIN_PASSWORD_INPUT("password"),
+    DASHBOARD_PANEL("//ul[@class=\"menu-sidebar-list\"]"),
+    AVATAR_BUTTON("//button[@class=\"header-avatar\"]"),
+    LOGOUT_BUTTON("//ul[@class=\"header-menu\"]"),
+    LOGIN_BUTTON("//button[@class=\"btn primary\"]"), 
+    REFRESH_BUTTON("//button[@class=\"btn refresh\"]");
     private String text;
     Variables(String text)
     {

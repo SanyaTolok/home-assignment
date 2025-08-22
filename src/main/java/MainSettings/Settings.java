@@ -18,7 +18,7 @@ import org.testng.annotations.Parameters;
 public class Settings {
     protected static WebDriver driver;
     public static Logger log = LogManager.getLogger("Assertion objects on pages");
-    public static String baseUrl = "https://scale.neptune.ai/o/examples/org/LLM-Pretraining/runs/details?viewId=standard-view&detailsTab=attributes&runIdentificationKey=llm_train-v945&type=experiment&compare=uMlyIDUTmecveIHVma0eEB95Ei5xu8F_9qHOh0nynbtM";
+    public static String baseUrl = "https://admin.stage.hvac.airesearch.abcloudz.com/";
 
     public static WebDriver getDriver() {
         return driver;

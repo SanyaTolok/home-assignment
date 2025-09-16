@@ -3,8 +3,6 @@ package Elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
-import static MainSettings.Settings.waitInSeconds;
-
 public class CheckBox extends Element {
 
     public CheckBox(By by) {

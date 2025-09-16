@@ -2,8 +2,6 @@ package MainSettings;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
-import java.util.HashMap;
 import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
